@@ -2,3 +2,8 @@
 Lpic2
 
 testtest
+
+
+test02
+
+test04
