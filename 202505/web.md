@@ -2,6 +2,7 @@
 
 
 <h3>httpd</h3>  
+
 サーバプログラム（デーモン）  
 起動すると設定ファイルにあたる、  
 httpd.conf（rhel10のデフォルトは/etc/httpd/conf/httpd.confだった）を読み込み、  
