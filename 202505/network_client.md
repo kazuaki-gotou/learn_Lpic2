@@ -9,11 +9,11 @@ defalut-lease-time
 ・option  
 option nis-servers IPアドレス;  
 
-NIS（Network Information Service）
-UNIX系システムで使用されるネットワーク管理サービスの一つ。    
+NIS（Network Information Service） 
+UNIX系システムで使用されるネットワーク管理サービスの一つ。（ディレクトリサービス）    
   
 NISを利用すると、ネットワーク上の複数のコンピュータでユーザー情報やホスト名、  
-グループ情報などを一元管理する。  
+グループ情報などを一元管理、クライアントに設定情報を共有する。  
 
 <h3>LDAP</h3>  
 https://blog.trustlogin.com/2022/20221027
