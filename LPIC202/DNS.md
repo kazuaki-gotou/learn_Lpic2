@@ -6,7 +6,7 @@ linuxのdnsソフトウェア
 named  
 bindにおいて、dnsのサービスを提供するデーモン。  
 
-<h3>レコード</h3>
+<h3>リソースレコード</h3>
 
 ・PTRレコード  
 逆引き 正引きとは反対にIPアドレスからドメイン名を調べること  
@@ -90,6 +90,7 @@ only・・・失敗した場合は自身で再帰問い合わせしない。
 
 /usr/sbin/named  
 起動すると最初に/etc/named.confを読み込む    
+
 named-checkconf  
 /etc/name.confの書式誤りをチェックする。  
 オプション-zでゾーンファイルの内容もチェックする。  
@@ -98,6 +99,10 @@ named-checkconf
 # named-checkconf
 /etc/named.conf:20: unknown option '??'
 ```
+
+<h3>ゾーンファイル</h3>
+
+
 
 rndc（コマンド）  
 namedを制御するコマンドでBIND9より提供されている。  

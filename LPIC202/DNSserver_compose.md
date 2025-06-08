@@ -5,6 +5,7 @@
 /run/named
 
 //ローカル使用ではあるものの、exampletest.localは競合しないと思って作成
+//下記ゾーンファイルは/runにて作成していたため再起動で消失した。
 # ls -ltr
 合計 12
 -rw------- 1 named named 102  6月  8 09:09 session.key
@@ -60,5 +61,30 @@ ns.exampletest.local.   3600    IN      A       xx.xx.xx.xx //DNSサーバのIP�
 ;; SERVER: 127.0.0.1#53(127.0.0.1)
 ;; WHEN: 日  6月 08 10:31:40 JST 2025
 ;; MSG SIZE  rcvd: 121
+
+```
+
+<h3>エラー</h3>
+おそらく/runにて作成していたゾーンファイルが再起動で消失したため、  
+named起動時に下記のログが出力されたと思われる。
+
+```
+//errorログ
+# systemctl status  named
+● named.service - Berkeley Internet Name Domain (DNS)
+   Loaded: loaded (/usr/lib/systemd/system/named.service; enabled; vendor preset: disabled)
+   Active: failed (Result: exit-code) since 月 2025-06-09 07:43:47 JST; 8s ago
+  Process: 1672 ExecStartPre=/bin/bash -c if [ ! "$DISABLE_ZONE_CHECKING" == "yes" ]; then /usr/sbin/named-checkconf -z "$NAMEDCONF"; else echo "Checking of zone files is disabled"; fi (code=exited, status=1/FAILURE)
+
+ 6月 09 07:43:47 localhost.localdomain bash[1672]: _default/exampletest.local/IN: file not found
+ 6月 09 07:43:47 localhost.localdomain bash[1672]: zone localhost.localdomain/IN: loaded serial 0
+ 6月 09 07:43:47 localhost.localdomain bash[1672]: zone localhost/IN: loaded serial 0
+ 6月 09 07:43:47 localhost.localdomain bash[1672]: zone 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa/IN: loaded serial 0
+ 6月 09 07:43:47 localhost.localdomain bash[1672]: zone 1.0.0.127.in-addr.arpa/IN: loaded serial 0
+ 6月 09 07:43:47 localhost.localdomain bash[1672]: zone 0.in-addr.arpa/IN: loaded serial 0
+ 6月 09 07:43:47 localhost.localdomain systemd[1]: named.service: control process exited, code=exited status=1
+ 6月 09 07:43:47 localhost.localdomain systemd[1]: Failed to start Berkeley Internet Name Domain (DNS).
+ 6月 09 07:43:47 localhost.localdomain systemd[1]: Unit named.service entered failed state.
+ 6月 09 07:43:47 localhost.localdomain systemd[1]: named.service failed.
 
 ```
