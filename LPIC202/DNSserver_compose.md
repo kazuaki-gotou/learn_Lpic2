@@ -4,7 +4,7 @@
 # pwd
 /run/named
 
-//exampletest.localは競合しないと思って作成
+//ローカル使用ではあるものの、exampletest.localは競合しないと思って作成
 # ls -ltr
 合計 12
 -rw------- 1 named named 102  6月  8 09:09 session.key
