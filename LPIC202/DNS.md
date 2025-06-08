@@ -51,7 +51,12 @@ options {
 ```
 
 ・directory  
-namedの作業ディレクトリ
+namedの作業ディレクトリ  /var/named など  
+zoneステートメントでディレクトリを指定しなければ、  
+optionsステートメントで指定したディレクトリにZoneファイルが設置される  
+→zone ステートメントでファイルパスを指定するときに、　　
+絶対パスを使用した場合は指定したその場所になり、　　
+相対パスを使用した場合は、options ステートメントで指定した directory のディレクトリを基準にした場所になる。　　
 
 ・recursion  
 再帰的問い合わせを受け付けるかの設定をする【YES|NO】
@@ -69,6 +74,12 @@ only・・・失敗した場合は自身で再帰問い合わせしない。
 ・allow-query  
 問い合わせを受け付けるホストを指定する。  
 
+・allow-transfer
+ゾーン転送を許可するホストを指定。  
+マスターDNSサーバからスレーブDNSのアドレスを指定する。  
+マスターサーバ自身が持つゾーンファイルの内容を、スレーブに転送することでゾーン情報を共有する。
+→その際のスレーブDNSサーバのアドレスを指定する際に使用する。
+
 /usr/sbin/named  
 起動すると最初に/etc/named.confを読み込む    
 named-checkconf  
@@ -82,14 +93,38 @@ named-checkconf
 
 rndc（コマンド）  
 namedを制御するコマンドでBIND9より提供されている。  
+
 rndc reload  
-設定ファイルを再読み込みして有効化する。 
+設定ファイル（/etc/named.conf およびゾーンファイル）を再読み込みして有効化する。 
+他同様のコマンド    
+/etc/init.d/named restart  (service named restart)  
+kill -HUP `cat /var/run/named.pid`  
 
+```
+# pwd
+/run/named
+# ls -ltr
+合計 8
+-rw------- 1 named named 102  6月  8 09:09 session.key
+-rw-r--r-- 1 named named   5  6月  8 09:10 named.pid
+# ls -ltr /var/run/named
+合計 8
+-rw------- 1 named named 102  6月  8 09:09 session.key
+-rw-r--r-- 1 named named   5  6月  8 09:10 named.pid
+```
 
-用語  
+<H4>語彙</H4>
 
 フォワーダ  
 DNSサーバが自分のところに来た問い合わせの答えを知らない場合に他のDNSサーバへ転送すること  
 
+DNSSEC（DNS Security Extensions）  
+公開鍵暗号方式を用いた電子署名で正当なDNSサーバからのゾーン情報であることを認証、ゾーン情報が改ざんされていないことを保証する技術。　　
+dnssec-keygen -n ZONE（オプションのデフォルトがZONEのため指定不要）で作成。  
+ゾーンファイルへの署名→dnssec-signzoneコマンド
 
-
+TSIG（Transaction Signature）  
+マスターDNSとスレーブDNSni共通の秘密鍵を設定し、
+ゾーン転送により同期されるゾーンデータなどでデータ改ざんや、DNSサーバの偽装やなりすましを防ぐ技術  
+(ゾーン情報の暗号化は行わない。)  
+dnssec-keygen -n HOST で共有秘密鍵を作成。  
