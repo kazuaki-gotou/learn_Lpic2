@@ -3,9 +3,10 @@
 ```
 # pwd
 /run/named
-
 //ローカル使用ではあるものの、exampletest.localは競合しないと思って作成
 //下記ゾーンファイルは/runにて作成していたため再起動で消失した。
+//→後で/var/named配下に指定
+
 # ls -ltr
 合計 12
 -rw------- 1 named named 102  6月  8 09:09 session.key
