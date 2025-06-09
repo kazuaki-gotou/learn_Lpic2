@@ -141,3 +141,8 @@ TSIG（Transaction Signature）
 ゾーン転送により同期されるゾーンデータなどでデータ改ざんや、DNSサーバの偽装やなりすましを防ぐ技術  
 (ゾーン情報の暗号化は行わない。)  
 dnssec-keygen -n HOST で共有秘密鍵を作成。  
+
+powerdns  
+bindと同じunixで利用できるDNSのオープンソフトウェア。  
+dnssecやbindのゾーンファイルの他、  
+LDAPやRDB（リレーショナルデータベース、MYSQLやpostgresqlなど）の利用が可能。  
