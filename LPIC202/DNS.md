@@ -146,3 +146,9 @@ powerdns
 bindと同じunixで利用できるDNSのオープンソフトウェア。  
 dnssecやbindのゾーンファイルの他、  
 LDAPやRDB（リレーショナルデータベース、MYSQLやpostgresqlなど）の利用が可能。  
+
+dnsmasq
+bindと同じunixで利用できるDNSのオープンソフトウェア。
+bindより設定が簡易で軽量。小規模DNSキャッシュサーバとして利用され、DHCPサーバの利用も可能である。  
+設定ファイルは/etc/dnsmasq.conf  
+始めに/etc/hostsファイルを参照し、名前解決できない場合は/etc/resolv.confに記載のDNSサーバに問い合わせを転送する。  
