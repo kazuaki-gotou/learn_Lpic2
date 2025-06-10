@@ -119,11 +119,13 @@ named-checkconf
 <h4>rndc（コマンド） </h4>
 namedを制御するコマンドでBIND9より提供されている。  
 
+・rndc status  
+namedの状態を表示する。  
+（systemctl status namedと記載は違う。）
 ・rndc halt  
 namedを直ちに停止させる。
 ・rndc stop  
 動的更新などを保存してからnamedを停止させる。  
-
 ・rndc reload  
 設定ファイル（/etc/named.conf およびゾーンファイル）を再読み込みして有効化する。（問い合わせ等は失われない） 
 他同様のコマンド    
