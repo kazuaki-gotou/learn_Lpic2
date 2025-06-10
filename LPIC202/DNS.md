@@ -116,11 +116,16 @@ named-checkconf
 
 
 
-rndc（コマンド）  
+<h4>rndc（コマンド） </h4>
 namedを制御するコマンドでBIND9より提供されている。  
 
-rndc reload  
-設定ファイル（/etc/named.conf およびゾーンファイル）を再読み込みして有効化する。 
+・rndc halt  
+namedを直ちに停止させる。
+・rndc stop  
+動的更新などを保存してからnamedを停止させる。  
+
+・rndc reload  
+設定ファイル（/etc/named.conf およびゾーンファイル）を再読み込みして有効化する。（問い合わせ等は失われない） 
 他同様のコマンド    
 /etc/init.d/named restart  (service named restart)  
 kill -HUP `cat /var/run/named.pid`  
