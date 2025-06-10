@@ -99,6 +99,8 @@ only・・・失敗した場合は自身で再帰問い合わせしない。
 <h4>includeステートメント</h4> 
 設定ファイルを読み込み、/etc/name.confの設定に追加する。   
 
+<h4>controlステートメント</h4>   
+rndcコマンドの操作を許可する外部ホストを指定。  
 
 /usr/sbin/named  
 起動すると最初に/etc/named.confを読み込む    
