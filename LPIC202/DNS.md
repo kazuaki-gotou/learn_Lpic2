@@ -114,6 +114,11 @@ named-checkconf
 /etc/named.conf:20: unknown option '??'
 ```
 
+<h5>ログ出力</h5>
+/etc/named.confでログ出力先を指定していない場合は、デフォルトでsyslogに出力する。以下は出力先。  
+/var/log/messages（redhat）  
+/var/log/syslog（debian）  
+
 <h3>ゾーンファイル</h3>
 
 
