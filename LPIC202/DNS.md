@@ -114,6 +114,13 @@ named-checkconf
 /etc/named.conf:20: unknown option '??'
 ```
 
+<h4>zoneステートメント</h4>
+・masterfile-format  
+text スレーブサーバのゾーンファイルをテキスト形式にする。  
+スレーブサーバのゾーンファイルはバイナリ形式になっている。  
+
+→スレーブサーバのゾーンファイルは通常、マスターサーバから複製される。  
+
 <h5>ログ出力</h5>
 /etc/named.confでログ出力先を指定していない場合は、デフォルトでsyslogに出力する。以下は出力先。  
 /var/log/messages（redhat）  
