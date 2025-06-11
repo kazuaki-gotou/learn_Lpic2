@@ -16,7 +16,7 @@ httpd.conf（rhel10のデフォルトは/etc/httpd/conf/httpd.confだった）�
 
 ・HostnameLookups[on|off]  
 ログに出力されるIPアドレスを逆引きしてホスト名にする。  
-出力されるたび逆引きすることは負荷が高いため、通常はoff。  
+接続数が増えると負荷が高くなるため、通常はoff。  
 
 MPM  
 マルチプロセッシングモジュール  
