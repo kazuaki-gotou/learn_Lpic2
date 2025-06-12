@@ -11,12 +11,20 @@ httpd.conf（rhel10のデフォルトは/etc/httpd/conf/httpd.confだった）�
 
 <h3>httpd.conf</h3>
 
-・ディレクティブ  
+<h5>ディレクティブ</h5>
+
 設定ファイルの中でデーモンに動作の指示を与える。  
 
 ・HostnameLookups[on|off]  
 ログに出力されるIPアドレスを逆引きしてホスト名にする。  
 接続数が増えると負荷が高くなるため、通常はoff。  
+
+・Timeout（秒）  
+クライアントからリクエストを受け取ってからコンテンツ提供終了までの処理上限時間。  
+・KeepAlive [on|off]  
+1つのTCP接続で複数の接続を受け付けるか。  
+・KeepAliveTimeout（秒）  
+KeepAlive有効状態で、クライアントからのコンテンツ終了しても接続状態を切らない上限時間。  
 
 MPM  
 マルチプロセッシングモジュール  
