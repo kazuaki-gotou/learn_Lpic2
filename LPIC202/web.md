@@ -1,5 +1,6 @@
 <h1>Apache</h1>  
 
+ライセンスについて→https://www.apache.org/licenses/LICENSE-2.0
 
 <h3>httpd</h3>  
 
