@@ -16,6 +16,11 @@ httpd.conf（rhel10のデフォルトは/etc/httpd/conf/httpd.confだった）�
 
 設定ファイルの中でデーモンに動作の指示を与える。  
 
+・Order Allow Deny  
+apache2.2でのアクセス制御ディレクティブ、現在は使用非推奨。  
+・require  
+apache2.4でのアクセス制御ディレクティブ。  
+
 ・HostnameLookups[on|off]  
 ログに出力されるIPアドレスを逆引きしてホスト名にする。  
 接続数が増えると負荷が高くなるため、通常はoff。  
@@ -93,7 +98,13 @@ linuxで最も使用されるプロキシサーバ。
 プロキシはクライアントからのアクセス代行をすることにより、アクセス制限を行うことができたり、
 アクセスされたデータをキャッシュとして保存し、再アクセスではキャッシュを返すことでアクセススピードを上げる。  
 
-squidは/etc/squid/squid.confが設定ファイル。  
+squidは/etc/squid/squid.confが設定ファイル。 
+
+<h5>squid.conf</h5> 
+
+http_port （portnum）  
+クライアントからのリクエストを受け付けるポートを指定。  
+
 
 <h5>squidのacl</h5>
 
