@@ -84,7 +84,7 @@ apacheによるアクセス制限。アクセスのために予め登録して�
 BASIC認証は認証情報のやりとりを平文で交わすので、盗聴されるリスクがあるが簡易的に利用できる。  
 digest認証は認証情報のやりとりをハッシュ化している為、盗聴リスクがBASIC認証に比べて低い。  
 
-<h6>認証に関するディレクティブ</h6>
+<h5>認証に関するディレクティブ</h5>
 
 ・AuthType  
 認証方式を指定する。(basic digest)  
@@ -92,8 +92,28 @@ digest認証は認証情報のやりとりをハッシュ化している為、�
 ・Require  
 認証対象とするユーザやグループを指定する。  
 
+<h4>HTTPS</h4>
+
+<h5>ssl.conf</h5>
+```
+# find /etc | grep ssl.conf
+/etc/httpd/conf.d/ssl.conf
+/etc/httpd/conf.modules.d/00-ssl.conf
+```
+HTTPS通信をするためのモジュールであるmod_sslをインストールすると生成されるコンフィグファイル。　　
+サーバ証明書やサーバ秘密鍵のパスについて設定する。　　
+
+■ディレクティブ  
+・SSLCertificateKeyFile  
+サーバの秘密鍵ファイルを指定  
+SSLCertificateKeyFile /etc/pki/tls/private/localhost.key  
+
+・SSLCertificateFile  
+サーバ証明書のファイルを指定  
+SSLCertificateFile /etc/pki/tls/certs/localhost.crt  
 
 <h4>squid</h4>
+
 linuxで最も使用されるプロキシサーバ。  
 プロキシはクライアントからのアクセス代行をすることにより、アクセス制限を行うことができたり、
 アクセスされたデータをキャッシュとして保存し、再アクセスではキャッシュを返すことでアクセススピードを上げる。  
