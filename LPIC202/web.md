@@ -16,6 +16,11 @@ httpd.conf（rhel10のデフォルトは/etc/httpd/conf/httpd.confだった）�
 
 設定ファイルの中でデーモンに動作の指示を与える。  
 
+■セキュリティ  
+TraceEnable on/off  
+traceメソッド（クライアントからのリクエストをそのまま返す）の有効無効を設定。  
+BASIC認証のユーザ名パスワードを盗まれる可能性があるためOFF推奨。  
+
 ■アクセス制御
 ・Order Allow Deny  
 apache2.2でのアクセス制御ディレクティブ、現在は使用非推奨。  
