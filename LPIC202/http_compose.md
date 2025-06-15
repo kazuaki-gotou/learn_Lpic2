@@ -105,6 +105,26 @@ public (active)
 lrwxrwxrwx 1 root root   29  6月 14 11:38 modules -> ../../usr/lib64/nginx/modules
 drwxr-xr-x 2 root root   26  6月 14 11:38 conf.d
 
+# vim nginx.conf
+//バーチャルホストの記載（http内に配置）
+http {
+        server {
+                listen 80;
+                server_name www.exampletest.local;
+                location / {
+                        proxy_pass http://xx.xx.xx.xx/;
+                        proxy_set_header Host $host;
+                        proxy_pass_header Server;
+                        }
+        }
+      }
+
+//nginx.confのチェック
+//nginx checks the configuration file syntax and then tries to open files referenced in the 
+//configuration file.
+# nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
 ```
 
 <h3>squid</h3>
@@ -187,6 +207,10 @@ http_port 3128
 
 # Uncomment and adjust the following to add a disk cache directory.
 #cache_dir ufs /var/spool/squid 100 16 256
+→→# pwd
+/var/spool/squid
+# ls -F
+00/  01/  02/  03/  04/  05/  06/  07/  08/  09/  0A/  0B/  0C/  0D/  0E/  0F/  swap.state
 
 # Leave coredumps in the first cache dir
 coredump_dir /var/spool/squid

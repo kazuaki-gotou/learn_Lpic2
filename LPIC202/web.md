@@ -16,14 +16,30 @@ httpd.conf（rhel10のデフォルトは/etc/httpd/conf/httpd.confだった）�
 
 設定ファイルの中でデーモンに動作の指示を与える。  
 
+■アクセス制御
 ・Order Allow Deny  
 apache2.2でのアクセス制御ディレクティブ、現在は使用非推奨。  
 ・require  
 apache2.4でのアクセス制御ディレクティブ。  
 
+■モジュール  
+・LoadModule  
+動的モジュールをロードできる。　　
+httpd.conf→Dynamic Shared Object (DSO) Support  
+Ex）LoadModule foo_module modules/mod_foo.so  
+
+・[静的|動的]モジュール  
+静的モジュールはapacheの起動時に必要なモジュールで、Apache本体に組み込まれる。  
+動的モジュール（DSO）はhttpd.confのLoadModuleで有効無効の設定が可能。  
+
+■プロセス処理  
 ・HostnameLookups[on|off]  
 ログに出力されるIPアドレスを逆引きしてホスト名にする。  
 接続数が増えると負荷が高くなるため、通常はoff。  
+・User  ユーザ名orユーザID
+httpd子プロセスの実行ユーザを指定  
+・Group  グループ名orグループID
+httpd子プロセスの実行グループを指定
 ・StartServers 子プロセス数  
 httpdをスタートさせた時に立ち上げるhttpd子プロセス数を指定  
 ・MinSpareServers 子プロセス数  
@@ -124,6 +140,20 @@ squidは/etc/squid/squid.confが設定ファイル。
 
 http_port （portnum）  
 クライアントからのリクエストを受け付けるポートを指定。  
+
+cache_mem  
+メモリにキャッシュ「できる」サイズを指定する。  
+
+maximum_object_size_in_memory  
+メモリ上でキャッシュ「される」オブジェクトの最大サイズを指定する。　　
+
+maximum(minimum)_object_size  
+ディスクでキャッシュされるデータの最大（最小）サイズ。
+
+cache_dir  
+キャッシュ用のディスク領域のディレクトリパスやサイズを指定する。  
+[text](http_compose.md)  
+
 
 
 <h5>squidのacl</h5>
