@@ -31,6 +31,7 @@ namedの動作に関する詳細な設定を行う。
 
 ```
 options {
+        //127.0.0.1のままでは他からの問い合わせができないので、サーバのIPか"any"にする。
         listen-on port 53 { 127.0.0.1; };
         listen-on-v6 port 53 { ::1; };
         directory       "/var/named";

@@ -50,7 +50,9 @@ public (active)
   source-ports:
   icmp-blocks:
   rich rules:
-
+  
+# firewall-cmd --reload
+success
 
 ```
 
