@@ -162,6 +162,11 @@ SSLCertificateKeyFile /etc/pki/tls/private/localhost.key
 サーバ証明書のファイルを指定  
 SSLCertificateFile /etc/pki/tls/certs/localhost.crt  
 
+####  nginx.conf  
+-  コンテキスト  
+ディレクティブの中で階層を持つことができるもの。  
+
+
 <h4>squid</h4>
 
 linuxで最も使用されるプロキシサーバ。  
