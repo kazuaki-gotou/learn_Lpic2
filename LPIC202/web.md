@@ -175,6 +175,8 @@ cache_dir
 キャッシュ用のディスク領域のディレクトリパスやサイズを指定する。  
 [text](http_compose.md)  
 
+hierarchy_stop_list  
+キャッシュを利用しない文字列を指定。
 
 
 <h5>squidのacl</h5>
