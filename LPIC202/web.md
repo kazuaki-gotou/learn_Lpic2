@@ -82,7 +82,8 @@ worker
 1つのリクエストに対してプロセス内の1つのスレッドがサービスを行う。  
 
 CGI  
-WEBサーバが動的な処理を行う為の仕組み。  
+common gateway interface  
+WEBサーバがphpやPythonなどの外部プログラムから処理を受け取る、橋渡しをするIF。  
 
 fastCGI  
 CGIの改良版。  
