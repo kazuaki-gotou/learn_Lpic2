@@ -12,6 +12,9 @@ httpd.conf（rhel10のデフォルトは/etc/httpd/conf/httpd.confだった）�
 
 <h3>httpd.conf</h3>
 
+apachectl configtest  
+httpd.confの構文チェックをする。  
+
 <h5>ディレクティブ</h5>
 
 設定ファイルの中でデーモンに動作の指示を与える。  
