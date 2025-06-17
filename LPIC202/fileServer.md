@@ -1,6 +1,11 @@
 ##  samba  
 
 SMB/CIFSによるwindows系ファイル共有システム  
+
+####  smb.conf  
+/etc/samba/smb.conf  
+sambaサーバの設定ファイル。  
+
   
 ##  nfs  
 UNIX標準のファイル共有  
