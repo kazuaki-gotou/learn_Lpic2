@@ -1,9 +1,8 @@
-<h1>samba</h1>
+##samba  
 
-nfsとの違い  
-samba  
 SMB/CIFSによるwindows系ファイル共有システム  
-nfs  
+  
+##nfs  
 UNIX標準のファイル共有  
 
 kerberos  
