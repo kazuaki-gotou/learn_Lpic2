@@ -47,7 +47,7 @@ sambaサーバへアクセスする際にwindowsドメインのユーザでの�
 
 ###  sambaコマンド  
 sambaユーザの管理を行うことができるコマンド。  
--  smbpasswd
+-  smbpasswd  
     テキスト形式ファイル/etc/samba/smbpasswd  
     -  -a sambaユーザを追加する。
 -  pdbedit
