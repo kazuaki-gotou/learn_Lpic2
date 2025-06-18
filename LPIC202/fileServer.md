@@ -7,26 +7,26 @@ SMB/CIFSによるwindows系ファイル共有システム
 sambaサーバの設定ファイル。  
 
 #####  予約済みセクション  
--  [global]セクション  
+1.[global]セクション  
 samba全般の設定を行う。  
 globalセクション以降のセクションで設定した項目が現れた場合は上書きする。  
 
---  server role (サーバの役割)  
+-  server role (サーバの役割)  
 sambaの動作モードを設定する。  
 
----  member server  
+    -  member server  
 ドメインのメンバーサーバになる。  
 
----  active directory domain controller  
+    -  active directory domain controller  
 ADサーバのドメインコントローラーになる。  
 
----  standalone  
+    -  standalone  
 スタンドアロンサーバになる。
 
--  [homes]セクション  
+2.[homes]セクション  
 unixユーザの各ホームディレクトリを一括して共有するためのセクション。  
 
--  [printers]セクション  
+3.[printers]セクション  
 共有プリンタに関する設定を行う。  
 プリンタが複数ある場合でも、プリンタごとに共有設定をする必要はない。  
  
