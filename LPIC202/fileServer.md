@@ -13,10 +13,13 @@ globalセクション以降のセクションで設定した項目が現れた�
 
 --  server role (サーバの役割)  
 sambaの動作モードを設定する。  
+
 ---  member server  
 ドメインのメンバーサーバになる。  
+
 ---  active directory domain controller  
 ADサーバのドメインコントローラーになる。  
+
 ---  standalone  
 スタンドアロンサーバになる。
 
