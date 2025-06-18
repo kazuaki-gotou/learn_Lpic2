@@ -11,6 +11,15 @@ sambaサーバの設定ファイル。
 samba全般の設定を行う。  
 globalセクション以降のセクションで設定した項目が現れた場合は上書きする。  
 
+--  server role (サーバの役割)  
+sambaの動作モードを設定する。  
+---  member server  
+ドメインのメンバーサーバになる。  
+---  active directory domain controller  
+ADサーバのドメインコントローラーになる。  
+---  standalone  
+スタンドアロンサーバになる。
+
 -  [homes]セクション  
 unixユーザの各ホームディレクトリを一括して共有するためのセクション。  
 
