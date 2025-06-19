@@ -59,9 +59,9 @@ sambaユーザの管理を行うことができるコマンド。
     -  -a sambaユーザを追加する。
 -  pdbedit
     -  -L sambaユーザの一覧を表示する。  
--  samba-tool  サブコマンド
+-  samba-tool  サブコマンド  
 ドメインやユーザ、セキュリティなどの管理を行うことができる。  
-    -  testperm
+    -  testperm  
     設定ファイルの構文チェックを行う。
 
 -  smbstatus  
