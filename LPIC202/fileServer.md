@@ -56,9 +56,9 @@ sambaサーバへアクセスする際にwindowsドメインのユーザでの�
 sambaユーザの管理を行うことができるコマンド。  
 -  smbpasswd  
     テキスト形式ファイル/etc/samba/smbpasswd  
-    -  -a sambaユーザを追加する。
+    -  -a sambaユーザを追加する。-e　有効化　-d  無効化　-x 削除  
 -  pdbedit
-    -  -L sambaユーザの一覧を表示する。  
+    -  -L sambaユーザの一覧を表示する。　-a　追加　-x　削除  
 -  samba-tool  サブコマンド  
 ドメインやユーザ、セキュリティなどの管理を行うことができる。  
     -  testperm  
