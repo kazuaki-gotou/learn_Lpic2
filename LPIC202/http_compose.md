@@ -1,4 +1,5 @@
 
+```
 # squid.conf – Sample Squid configuration
 # Copyright (C) 2025 [kazuaki-gotou]
 #
@@ -7,9 +8,9 @@
 # You may choose either of these licenses for use, modification, or distribution.
 #
 # SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+```
 
-
-<H3>firewall-cmd</H3>
+###  firewall-cmd
 
 ```
 # firewall-cmd --list-all
