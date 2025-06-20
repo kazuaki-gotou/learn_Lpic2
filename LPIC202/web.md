@@ -27,12 +27,20 @@ BASIC認証のユーザ名パスワードを盗まれる可能性があるため
 クライアントに対しての返信の応答ヘッダに何を含めるのかを記載。  
 apacheのバージョンを含めないことができる。  
 
-
-■アクセス制御
+■アクセス制御  
 ・Order Allow Deny  
 apache2.2でのアクセス制御ディレクティブ、現在は使用非推奨。  
 ・require  
 apache2.4でのアクセス制御ディレクティブ。  
+
+■外部設定ファイル  
+・AccessFileName ファイル名  
+外部設定ファイル名を指定。（デフォルトは.htaccess）  
+・AllowOverride パラメータ  
+外部設定ファイルにより、httpd.confの上書きを許可するかどうか。  
+-  AuthConfig  
+   認証関係の設定を許可。  
+-  All すべての設定を許可。　None すべての設定を拒否。　　Limit  Order Allow Denyディレクティブを許可。  
 
 ■モジュール  
 ・LoadModule  
