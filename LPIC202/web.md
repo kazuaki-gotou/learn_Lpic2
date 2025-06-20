@@ -40,7 +40,17 @@ apache2.4でのアクセス制御ディレクティブ。
 外部設定ファイルにより、httpd.confの上書きを許可するかどうか。  
 -  AuthConfig  
    認証関係の設定を許可。  
--  All すべての設定を許可。　None すべての設定を拒否。　　Limit  Order Allow Denyディレクティブを許可。  
+     -  All すべての設定を許可。　None すべての設定を拒否。　　Limit  Order Allow Denyディレクティブを許可。  
+
+■redirect/alias
+-  redirect  
+URLから指定のURLへのリダイレクトを指示する設定。
+     -  [permanent|301] リソースが永久的に移動したことを示す。
+     -  [temp|302] 一時的なリダイレクト（デフォルト）　　
+
+-  alias  
+新しいURLへリダイレクトするようにクライアントへ指示するredirectに対して、  
+aliasはサーバ側で新しいページをリリースする。  
 
 ■モジュール  
 ・LoadModule  
@@ -66,6 +76,9 @@ httpdをスタートさせた時に立ち上げるhttpd子プロセス数を指�
 待機httpd子プロセス数の最小数を指定。  
 ・MaxSpareServers 子プロセス数  
 待機httpd子プロセス数の最大数を指定。  
+・MaxRequestWorkers　子プロセス数  
+生成されるhttpd子プロセスの最大数を指定。  
+(同時応答リクエスト数を指定。)  
 
 <h5>プロセス処理</h5>
 
@@ -162,13 +175,18 @@ HTTPS通信をするためのモジュールであるmod_sslをインストー�
 サーバ証明書やサーバ秘密鍵のパスについて設定する。　　
 
 ■ディレクティブ  
-・SSLCertificateKeyFile  
+-  SSLCertificateKeyFile  
 サーバの秘密鍵ファイルを指定  
 SSLCertificateKeyFile /etc/pki/tls/private/localhost.key  
 
-・SSLCertificateFile  
+-  SSLCertificateFile  
 サーバ証明書のファイルを指定  
 SSLCertificateFile /etc/pki/tls/certs/localhost.crt  
+
+-  SSLCACertficateFile（単一指定）  
+クライアント認証に使用するCA証明書のファイルを指定する。  
+-  SSLCACertificatePath（複数指定）  
+クライアント認証に使用するCA証明書のファイルが存在するディレクトリパスを指定する。  
 
 ####  nginx.conf  
 -  コンテキスト  
@@ -210,4 +228,8 @@ cgi-binや?などのキーワードは動的コンテンツのURLで頻発する
 squid.conf内に記載する。  
 aclで制御したいアドレスレンジやポートなどのacl情報を指定してグループ化。  
 http_accessで制御を設定。（allowdeny）  
+-  srcdomain ドメイン名  
+クライアントのドメイン名
+-  dstdomain ドメイン名  
+宛先ドメイン名  
 
