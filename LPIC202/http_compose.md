@@ -57,7 +57,7 @@ success
 
 ```
 
-<h3>httpd.conf</h3>
+###  httpd.conf
 
 ```
 //http://サーバのIPアドレス/privateへ接続可能
@@ -78,6 +78,17 @@ success
     Deny from all
     Allow from xx.xx.xx.xx/32
 </Directory>
+
+//バーチャルホストを使用する。
+//apacheのバーチャルホスト設定については別ファイルに分けて管理される。
+//conf/extra/httpd-vhosts.confのようなファイルを読み込んで初めてバーチャルホスト設定が使用できる。
+
+Include conf/extra/httpd-vhosts.conf
+
+//動的バーチャルホストを使うのに必要なモジュール
+//mod_vhost_alias
+
+LoadModule vhost_alias_module
 
 ```
 
