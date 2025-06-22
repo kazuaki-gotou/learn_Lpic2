@@ -79,6 +79,10 @@ sambaユーザの管理を行うことができるコマンド。
     -  -v smb.confに記載されていない設定を表示する。
 -  smbstatus  
     sambaに接続されているユーザやロックされているファイルなどの情報確認する。  
+-  smbcontrol  
+smbd nmbd winbinddにメッセージを送ることができる。  
+クライアントとの接続をkillするなど。  
+
 -  nmblookup  
     NETBIOS名からIPアドレスを参照したり、その逆の参照もできる。マスターブラウザを検索もできる。  
     - Aオプション  
