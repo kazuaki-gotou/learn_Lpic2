@@ -28,6 +28,11 @@ ADサーバのドメインコントローラーになる。
 -  realm  
 activedirectryのドメイン名（realm）を指定。  
 
+-  wins server （ipアドレス） 
+winsサーバーのipを指定する。  
+-  wins support  
+sambaサーバーをwinsサーバーとして動作するかどうかを指定する。  
+
 2.[homes]セクション  
 unixユーザの各ホームディレクトリを一括して共有するためのセクション。  
 
