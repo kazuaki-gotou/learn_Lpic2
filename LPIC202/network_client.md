@@ -18,7 +18,21 @@ UNIX系システムで使用されるネットワーク管理サービスの一�
 NISを利用すると、ネットワーク上の複数のコンピュータでユーザー情報やホスト名、  
 グループ情報などを一元管理、クライアントに設定情報を共有する。  
 
-###  LDAP  
-https://blog.trustlogin.com/2022/20221027
+##  LDAP  
+https://blog.trustlogin.com/2022/20221027  
+
+###  OpenLDAP  
+LDAPサーバのフリーアプリケーション。  
+LDAPサーバのデーモンはslapdで、  
+/etc/openldap/slapd.confに設定ファイルを配置。  
+
+####  slapd.conf  
+openldapの設定ファイル。テキストベースの設定ファイル。  
+
+####  slapd-config  
+ディレクトリ形式で、LDIFファイルベースでの設定ファイルで構成。  
+-  olcaccess  
+アクセス制御のディレクティブ。
+
 
 
