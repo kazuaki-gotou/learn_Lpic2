@@ -40,6 +40,12 @@ PAMの設定についてを取りまとめたディレクトリ。
 使用するモジュールを決める。  
 モジュールファイルは、/lib/security（/lib64/security）に格納されており、フルパス指定しなければこのディレクトリを指定する。  
 
+-  pam_unix.so  
+通常のパスワード認証。  
+-  pam_cracklib.so  
+パスワードの書式を制限する。  
+-  pam_securetty.so  
+rootユーザでのログインを/etc/securettyファイルに記載の端末（/dev配下のtty1などの端末名）以外拒否する。  
 -  pam_deny.so  
 認証をすべて拒否する。  
 
