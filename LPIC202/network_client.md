@@ -12,6 +12,10 @@
     -  option nis-servers IPアドレス;  
     nisサーバのipアドレスを指定。  
 
+####  ログ  
+cat /var/log/messages | grep dhcp  
+journalctl | grep dhcp  
+systemctl status dhcpd （全てのログではなく最新の一部のみ）  
 ###  dhcrelay  
 DHCPリレーのデーモン。  
 
@@ -35,7 +39,7 @@ PAMの設定についてを取りまとめたディレクトリ。
 -  requisite  
 モジュールの実行に失敗した場合、それ以降のモジュールは実施せず認証を拒否。  
 -  required  
-モジュールの実行に失敗した場合、同じタイプ（auth、accountなどのmanagement group）のモジュールを実施してから認証を拒否する。  
+モジュールの実行に失敗した場合、同じタイプ（auth、accountなどのmanagement group/モジュールタイプ）のモジュールを実施してから認証を拒否する。  
 -  sufficient  
 モジュールの実行に成功した場合、この行以前のrequiredモジュールですべて成功していれば、認証を許可する。  
 失敗していれば次の行のモジュールが実行する。  
@@ -52,6 +56,11 @@ PAMの設定についてを取りまとめたディレクトリ。
 rootユーザでのログインを/etc/securettyファイルに記載の端末（/dev配下のtty1などの端末名）以外拒否する。  
 -  pam_deny.so  
 認証をすべて拒否する。  
+-  pam_warn.so  
+認証やパスワード変更などのイベントが起きた場合、ログに記録する。  
+-  pam_limits.so  
+ユーザが使用するリソースを制限する。  
+
 
 ##  LDAP  
 https://blog.trustlogin.com/2022/20221027  
