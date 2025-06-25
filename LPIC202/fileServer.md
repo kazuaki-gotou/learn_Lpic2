@@ -60,6 +60,9 @@ sambaサーバへアクセスする際にwindowsドメインのユーザでの�
 （既存あるいは新規作成のlinuxユーザと紐付け→NSS（/etc/nsswitch.conf）を利用してユーザ情報を取得。）  
 デーモン→winbindd  
 
+    -  idmap  
+       windowsのsidとlinuxのuid gidとのマッピングする機能。  
+
 -  samba4からADのドメインコントローラーの機能追加され、起動コマンドはsystemctl start samba
 
 ###  sambaコマンド  
