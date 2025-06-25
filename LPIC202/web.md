@@ -28,10 +28,16 @@ BASIC認証のユーザ名パスワードを盗まれる可能性があるため
 apacheのバージョンを含めないことができる。  
 
 ■アクセス制御  
-・Order Allow Deny  
-apache2.2でのアクセス制御ディレクティブ、現在は使用非推奨。  
-・require  
+-  Order Allow Deny  
+apache2.2でのアクセス制御ディレクティブ、現在は使用非推奨。デフォルトで全て拒否。（許可の記載がない限り、全拒否）  
+-  Order Deny Allow  
+デフォルトで全て許可。 （拒否の記載がない限り、全許可） 
+-  require  
 apache2.4でのアクセス制御ディレクティブ。  
+  -  require all granted  
+     全て許可　order deny allowと同じ。
+  -  require all denied  
+     全て拒否　order allow denyと同じ。  
 
 ■外部設定ファイル  
 ・AccessFileName ファイル名  
