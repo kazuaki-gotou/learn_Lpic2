@@ -1,8 +1,8 @@
-<h1>Apache</h1>  
+#  Apache  
 
 ライセンスについて→https://www.apache.org/licenses/LICENSE-2.0
 
-<h3>httpd</h3>  
+## httpd  
 
 サーバプログラム（デーモン）  
 起動すると設定ファイルにあたる、  
@@ -10,12 +10,12 @@ httpd.conf（rhel10のデフォルトは/etc/httpd/conf/httpd.confだった）�
 記載されているディレクティブに従って動作する。  
 各ディレクティブはどのコンテキストで使用できるかが定められている。  
 
-<h3>httpd.conf</h3>
+###  httpd.conf  
 
 apachectl configtest  
 httpd.confの構文チェックをする。  
 
-<h5>ディレクティブ</h5>
+####  ディレクティブ  
 
 設定ファイルの中でデーモンに動作の指示を与える。  
 
@@ -38,6 +38,8 @@ apache2.4でのアクセス制御ディレクティブ。
      全て許可　order deny allowと同じ。
   -  require all denied  
      全て拒否　order allow denyと同じ。  
+-  Limit  
+指定したhttpメソッド（DELETE PUSHなど）のアクセス制御が可能。  
 
 ■外部設定ファイル  
 ・AccessFileName ファイル名  
@@ -46,7 +48,7 @@ apache2.4でのアクセス制御ディレクティブ。
 外部設定ファイルにより、httpd.confの上書きを許可するかどうか。  
 -  AuthConfig  
    認証関係の設定を許可。  
-     -  All すべての設定を許可。　None すべての設定を拒否。　　Limit  Order Allow Denyディレクティブを許可。  
+-  All すべての設定を許可。　None すべての設定を拒否。　　Limit  Order Allow Denyディレクティブを許可。  
 
 ■redirect/alias
 -  redirect  
