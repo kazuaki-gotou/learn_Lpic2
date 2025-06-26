@@ -206,37 +206,32 @@ http://example.localdomain/のように/で終わる場合に返答するファ�
 -  listen（ip:portnum）  
 ipアドレスポート番号を指定。  
 
-<h4>squid</h4>
-
+###  squid  
 linuxで最も使用されるプロキシサーバ。  
 プロキシはクライアントからのアクセス代行をすることにより、アクセス制限を行うことができたり、
 アクセスされたデータをキャッシュとして保存し、再アクセスではキャッシュを返すことでアクセススピードを上げる。  
 
 squidは/etc/squid/squid.confが設定ファイル。 
 
-<h5>squid.conf</h5> 
-
-http_port （portnum）  
+####  squid.conf  
+-  http_port （portnum）  
 クライアントからのリクエストを受け付けるポートを指定。  
-
-cache_mem  
-メモリにキャッシュ「できる」サイズを指定する。  
-
-maximum_object_size_in_memory  
+-  cache_mem  
+メモリにキャッシュ「できる」最大サイズを指定する。  
+-  maximum_object_size_in_memory  
 メモリ上でキャッシュ「される」オブジェクトの最大サイズを指定する。　　
-
-maximum(minimum)_object_size  
-ディスクでキャッシュされるデータの最大（最小）サイズ。
-
-cache_dir  
+-  maximum(minimum)_object_size  
+ディスクでキャッシュされるデータの最大（最小）サイズ。  
+-  request_header_max_size  
+httpリクエストヘッダの最大サイズを指定する。  
+-  cache_dir  
 キャッシュ用のディスク領域のディレクトリパスやサイズを指定する。  
 [text](http_compose.md)  
-
-hierarchy_stop_list  
+-  hierarchy_stop_list  
 キャッシュを利用しない文字列を指定。  
 cgi-binや?などのキーワードは動的コンテンツのURLで頻発するワード。動的コンテンツでキャッシュを利用すると不具合が発生する可能性があるため、キャッシュ利用しない文字列に指定する。  
 
-<h5>squidのacl</h5>
+#####  squidのacl
 
 squid.conf内に記載する。  
 aclで制御したいアドレスレンジやポートなどのacl情報を指定してグループ化。 
