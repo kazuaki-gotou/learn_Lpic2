@@ -15,7 +15,11 @@ globalセクション以降のセクションで設定した項目が現れた�
 認証方法を設定する。  
     -  user  ユーザレベルでの認証
     -  domain  NTドメインのドメインコントローラーを使用して認証
-    -  ads  Active Directoryのドメインコントローラーで認証
+    -  ads  Active Directoryのドメインコントローラーで認証  
+-  passdb backend = 認識方式  
+securityがuserの場合に認証方式を指定する。（複数可）  
+-  smb passwd file = ファイル名  
+securityがuserの場合にsmbpasswdで使用するパスワードファイルを指定。
 -  server role (サーバの役割)  
 sambaの動作モードを設定する。  
     -  member server  
