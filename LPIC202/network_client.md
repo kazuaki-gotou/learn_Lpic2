@@ -7,7 +7,9 @@
 -  defalut-lease-time  
 クライアントへの貸し出し時間  
 指定しない場合43200秒（12時間）  
-
+-  fixed-address IPアドレス;  
+クライアントに割り当てる固定ipアドレスを設定  
+macアドレスを指定して割り当て、予約席みたいなもの  
 -  option  
     -  option nis-servers IPアドレス;  
     nisサーバのipアドレスを指定。  
@@ -74,10 +76,14 @@ LDAPサーバのデーモンはslapdで、
 openldapの設定ファイル。テキストベースの設定ファイル。  
 
 ####  slapd-config  
-ディレクトリ形式で、LDIFファイルベースでの設定ファイルで構成。  
+ディレクトリ形式で、LDIFファイルベースでの設定ファイルで構成。こちらの方が新しく、設定がある場合はslapd.confは無効化。  
+-  suffix DN/olcSuffix  
+ディレクトリのトップとなるDNを指定。  
+-  rootdn DN/olcRootDN  データベース管理者のDNを指定。　　
+-  argsfile/olcArgsFile  slapd起動時のコマンドの引数が入ったファイルを指定する。  
+-  include/olcInclude  読み込む設定ファイルを指定  
 -  olcaccess  
 アクセス制御のディレクティブ。  
-
 ####  openldapのコマンド  
 -  slapcat  
 slapdデータベースの内容を基にldifを生成する。  
