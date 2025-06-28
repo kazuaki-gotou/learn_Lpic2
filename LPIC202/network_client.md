@@ -108,11 +108,22 @@ LDAPサーバのエントリを検索する。
 
 
 ####  オブジェクトクラス  
-#####  person属性  
+-  ABSTRACT  
+-  STRUCTURAL
+-  AUXILIARY
+
+####  スキーマ LDIF  
+オブジェクトクラスや属性はスキーマファイルで定義されている。　　
+スキーマについてはslapd.confのincludeで読み込む。  
+slapd-configの場合はLDIFで動的読み込み。
+-  core.schema  core.ldif  
+cn ou などの基本的な属性を定義する。必須。　　
+
+####  person属性  
 -  cn commonname（一般名）  
 -  sn surname（名字）  
 
-#####  ホワイトページ  
+####  ホワイトページ  
 -  inetOrgPerson  
 ホワイトページをLDAPで構築するために必要となるオブジェクトクラス。  
 
@@ -121,6 +132,7 @@ activedirectoryやldapなどの認証リモートサーバとクライアント�
 クライアントプログラムに認証機能を与える。  
 sssdがキャッシュ機能を持つことで、オフラインでも認証可能にする。  
 
-
+##  語彙  
+-  SASL  
 
 
