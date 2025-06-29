@@ -99,6 +99,8 @@ openldapの設定ファイル。テキストベースの設定ファイル。
 -  include/olcInclude  読み込む設定ファイルを指定  
 -  olcaccess  
 アクセス制御のディレクティブ。  
+-  olcbackend  
+
 ####  openldapのコマンド  
 -  slapcat  
 slapdデータベースの内容を基にldifを生成する。  
