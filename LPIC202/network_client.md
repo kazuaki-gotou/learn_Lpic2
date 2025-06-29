@@ -1,7 +1,9 @@
 ##  DHCP
 
 ###  dhcpd.conf  
-設定ファイルは/etc/dhcpd.conf
+設定ファイルは/etc/dhcpd.conf  
+-  dhcp.leases  
+どのipアドレスをどのクライアントに貸し出したかを記載するファイル。このファイルが無ければdhcpサーバを起動できない。  
 
 ####  設定項目  
 -  defalut-lease-time  
