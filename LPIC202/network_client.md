@@ -133,7 +133,7 @@ cn ou などの基本的な属性を定義する。必須。　　
 
 ####  ホワイトページ  
 -  inetOrgPerson  
-ホワイトページをLDAPで構築するために必要となるオブジェクトクラス。  
+ホワイトページをLDAPで構築するために必要となるオブジェクトクラス。基底クラス→organizationalPerson→person  
 
 ###  sssd  
 activedirectoryやldapなどの認証リモートサーバとクライアントを仲介する。  
