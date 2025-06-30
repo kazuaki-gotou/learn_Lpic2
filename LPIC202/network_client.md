@@ -84,7 +84,10 @@ rootユーザでのログインを/etc/securettyファイルに記載の端末�
 
 ##  LDAP  
 https://blog.trustlogin.com/2022/20221027  
-
+-  DN  
+複数のRDNをカンマで区切って並べたもの。エントリ。  
+-  RDN  
+相対識別名。  
 ###  OpenLDAP  
 LDAPサーバのフリーアプリケーション。  
 LDAPサーバのデーモンはslapdで、  
@@ -92,6 +95,7 @@ LDAPサーバのデーモンはslapdで、
 
 ####  slapd.conf  
 openldapの設定ファイル。テキストベースの設定ファイル。  
+slapdの起動時にslapd -fに続けてファイルを指定して起動も可能。  
 
 ####  slapd-config  
 ディレクトリ形式で、LDIFファイルベースでの設定ファイルで構成。こちらの方が新しく、設定がある場合はslapd.confは無効化。  
@@ -102,9 +106,12 @@ openldapの設定ファイル。テキストベースの設定ファイル。
 -  include/olcInclude  読み込む設定ファイルを指定  
 -  olcaccess  
 アクセス制御のディレクティブ。  
+-  olcbackend  
+バックエンドを指定。  
 ####  openldapのコマンド  
 -  slapcat  
 slapdデータベースの内容を基にldifを生成する。  
+    -  -l  LDIFファイルを指定の名前で生成する。（固有オプション）  
 -  slappasswd  
 サーバ管理者パスワードをハッシュ化して生成する。  
 slapd.confに平文で記載する代わりにハッシュ値として保存することで流出リスクに備えることができる。  
