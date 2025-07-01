@@ -1,5 +1,5 @@
 ##  DHCP
-
+lpicではISC DHCPを使用。  
 ###  dhcpd.conf  
 設定ファイルは/etc/dhcpd.conf  
 -  dhcp.leases  
@@ -20,6 +20,9 @@ macアドレスを指定して割り当て、予約席みたいなもの
 cat /var/log/messages | grep dhcp  
 journalctl | grep dhcp  
 systemctl status dhcpd （全てのログではなく最新の一部のみ）  
+####  dhcpv6  
+ipアドレス（グローバルアドレス、ユニークローカル）、DNS、プレフィックス、一時アドレスを付与。  
+一時アドレスは下位プレフィックスのインターフェイスid生成のmacアドレスではなく、仮のアドレスを生成する。  
 ###  dhcrelay  
 DHCPリレーのデーモン。  
 
@@ -134,9 +137,12 @@ slapd-configの場合はLDIFで動的読み込み。
 -  core.schema  core.ldif  
 cn ou などの基本的な属性を定義する。必須。　　
 
-####  person属性  
+####  personなど属性名  
 -  cn commonname（一般名）  
 -  sn surname（名字）  
+-  o 組織名（会社や法人そのもの）  
+-  ou 部署などの組織の単位  
+
 
 ####  ホワイトページ  
 -  inetOrgPerson  
