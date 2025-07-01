@@ -138,6 +138,7 @@ slapd-configの場合はLDIFで動的読み込み。
 cn ou などの基本的な属性を定義する。必須。　　
 
 ####  personなど属性名  
+-  dc ドメインの構成要素  
 -  cn commonname（一般名）  
 -  sn surname（名字）  
 -  o 組織名（会社や法人そのもの）  
