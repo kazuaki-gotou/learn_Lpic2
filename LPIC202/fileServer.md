@@ -67,7 +67,8 @@ sambaサーバへアクセスする際にwindowsドメインのユーザでの�
     -  idmap  
        windowsのsidとlinuxのuid gidとのマッピングする機能。  
 
--  samba4からADのドメインコントローラーの機能追加され、起動コマンドはsystemctl start samba
+-  samba4からADのドメインコントローラーの機能追加され、起動コマンドはsystemctl start samba  
+-  ファイルサービスについて、samba3までSMB2に対応し、samba4よりSMB2，3に対応。  
 
 ###  sambaコマンド  
 sambaユーザの管理を行うことができるコマンド。  
