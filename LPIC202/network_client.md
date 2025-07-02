@@ -111,6 +111,7 @@ slapdの起動時にslapd -fに続けてファイルを指定して起動も可�
 -  rootdn DN/olcRootDN  データベース管理者のDNを指定。　　
 -  argsfile/olcArgsFile  slapd起動時のコマンドの引数が入ったファイルを指定する。  
 -  include/olcInclude  読み込む設定ファイルを指定  
+-  logfile/olcLogFile  デバッグログ出力先を指定  
 -  olcaccess  
 アクセス制御のディレクティブ。  
 -  olcbackend  
