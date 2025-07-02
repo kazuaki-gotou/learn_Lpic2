@@ -25,9 +25,11 @@ systemctl status dhcpd （全てのログではなく最新の一部のみ）
 ####  dhcpv6  
 ipアドレス（グローバルアドレス、ユニークローカル）、DNS、プレフィックス、一時アドレスを付与。  
 一時アドレスは下位プレフィックスのインターフェイスid生成のmacアドレスではなく、仮のアドレスを生成する。  
-###  dhcrelay  
+####  デーモン  
+-  dhcrelay  
 DHCPリレーのデーモン。  
-
+-  dhcpcd/dhclient  
+DHCPクライアント  
 ####  知識
 -  NIS（Network Information Service） 
 UNIX系システムで使用されるネットワーク管理サービスの一つ。（ディレクトリサービス）  
