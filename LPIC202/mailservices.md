@@ -6,6 +6,11 @@ postfixのMTA各種設定
 -  /etc/postfix/master.cf  
 postfixのデーモンの設定  
 
+##  sendmail  
+
+###  sendmailの設定ファイル  
+/etc/mailディレクトリ配下に設定ファイルを配置。  
+
 ##  dovecot  
 IMAP/POP3サーバ  
 メールボックスフォーマットはmbox Maildir  
@@ -16,4 +21,8 @@ imaps（993）pop3s（995）の各ポートのSSL/TLS接続
 
 ###  Sieve  
 メールのフィルタリングにて使用されるプログラミング言語。  
-dovecotやサーバサイドのメールソフトで使用される。
+dovecotやサーバサイドのメールソフトで使用される。  
+
+###  /var/spool  
+一時的に作業用などで配置するディレクトリ。  
+配下にmailやprinterなどのサーバが使用。
