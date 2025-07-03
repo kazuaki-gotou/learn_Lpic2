@@ -6,6 +6,16 @@ postfixのMTA各種設定
 -  /etc/postfix/master.cf  
 postfixのデーモンの設定  
 
+###  コマンド  
+-  postconf  
+postfixの設定内容を確認できる。  
+    -  -n  デフォルトの設定との差分を出力する。  
+-  postfix  
+postfixをコントロールするコマンド。
+    -  check postfix設定ファイルの構文チェックをする。   
+    -  stop postfixを適切に停止する。  
+    -  abort postfixを強制停止する。  
+    -  flush メールキュー内のメールを直ちに再送する。  
 ##  sendmail  
 
 ###  sendmailの設定ファイル  
