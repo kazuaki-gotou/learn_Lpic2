@@ -74,6 +74,8 @@ Ex）LoadModule foo_module modules/mod_foo.so
 ・HostnameLookups[on|off]  
 ログに出力されるIPアドレスを逆引きしてホスト名にする。  
 接続数が増えると負荷が高くなるため、通常はoff。  
+・LogLevel エラーログに出力するログレベルを指定する。  
+・ErrorLog エラーログファイルを指定する。  
 ・User  ユーザ名orユーザID
 httpd子プロセスの実行ユーザを指定  
 ・Group  グループ名orグループID
