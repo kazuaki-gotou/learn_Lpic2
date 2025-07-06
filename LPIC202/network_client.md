@@ -90,6 +90,7 @@ rootユーザでのログインを/etc/securettyファイルに記載の端末�
 環境変数の設定。  
 
 ##  LDAP  
+データをオブジェクトとして管理し、DITと呼ばれる形式。  
 https://blog.trustlogin.com/2022/20221027  
 -  DN  
 複数のRDNをカンマで区切って並べたもの。エントリ。  
