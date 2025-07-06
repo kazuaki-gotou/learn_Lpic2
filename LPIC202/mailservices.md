@@ -16,8 +16,13 @@ sendmailと互換性があり、高機能で、使用方法が簡略化されて
 ###  postfixの設定ファイル  
 -  /etc/postfix/main.cf  
 postfixのMTA各種設定  
-    -  mydomain  メールサーバーのドメインを設定する。  
-    
+    -  mydomain  メールサーバーのドメインを設定する。 
+    -  smtpd_use_tls  yesでTLSを有効化する。  
+    -  smtpd_enforce_tls  yesでTLSを強制する。  
+    TLSが有効化されていない場合はこの設定も無効になる。（設定依存）  
+    -  mail_spool_directory  メールスプール先を指定  
+        -  mbox  ユーザごとに1ファイルに保存
+        -  Mairdir  1メール1ファイルに保存
 -  /etc/postfix/master.cf  
 postfixのデーモンの設定  
 
@@ -47,7 +52,7 @@ imaps（993）pop3s（995）の各ポートのSSL/TLS接続
 ###  dovecot.conf  
 メインの設定ファイル  
 /etc/dovecot/conf.dにもコンフィグがあり、  
-IMAPについては20-imap.conf  POP3は20-pop3.confにある。  
+IMAPについては20-imap.conf  POP3は20-pop3.conf SSLは10-ssl.conf  
 -  listen  接続を待ち受けるIPアドレスを設定する。  
 -  mechanisms  
 dovecotの認証方式について設定する。  
@@ -60,6 +65,11 @@ dovecotの認証方式について設定する。
   # NOTE: The username is compared case-sensitively.
 ```
 
+###  /etc/dovecot/conf.d
+-  10-ssl.conf
+SSLについての設定を行う。  
+    -  ssl yes/no 有効無効　required 必須
+
 ###  コマンド  
 -  doveadm  dovecotの管理コマンド。  
 
@@ -71,6 +81,7 @@ dovecotやサーバサイドのメールソフトで使用される。
 ####  構文
 ■コントロール  
 -  require 拡張機能を設定  
+
 ■テスト  
 ■アクション  
  
@@ -78,3 +89,16 @@ dovecotやサーバサイドのメールソフトで使用される。
 ###  /var/spool  
 一時的に作業用などで配置するディレクトリ。  
 配下にmailやprinterなどのサーバが使用。
+
+##  knowledge  
+- /etc/aliases  
+メールアドレスの別名について設定できる。(設定後はnewaliasesで更新する。)  
+    -  メーリングリスト
+    メールを送付するリストをファイルで管理して、aliasesファイルにインポートする。  
+    書式  
+    mailinglist(ここを宛先にするとファイルのユーザに送付可能):　:include:/etc/mail/userlist  
+- exim  
+debian標準のMTA　
+-  Coutier-IMAP  
+maildirを使用したIMAPサーバ  
+
