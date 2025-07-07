@@ -22,7 +22,10 @@ postfixのMTA各種設定
     TLSが有効化されていない場合はこの設定も無効になる。（設定依存）  
     -  mail_spool_directory  メールスプール先を指定  
         -  mbox  ユーザごとに1ファイルに保存
-        -  Mairdir  1メール1ファイルに保存
+        -  Mairdir  1メール1ファイルに保存  
+    -  inet_interfaces メールをどのIPアドレスで受信するかを設定
+    -  canonical_maps 送受信アドレスの書き換えで参照する  
+        -  sender_canonical_maps 送信アドレスを書き換える　recipient_canonical_maps 受信アドレスを書き換える  
 -  /etc/postfix/master.cf  
 postfixのデーモンの設定  
 
@@ -72,7 +75,8 @@ SSLについての設定を行う。
 
 ###  コマンド  
 -  doveadm  dovecotの管理コマンド。  
-
+    -  who ログイン中のユーザを表示
+    -  pw 新規パスワードを生成
 
 ###  Sieve  
 メールのフィルタリングにて使用されるプログラミング言語。  
