@@ -40,7 +40,10 @@ apache2.4でのアクセス制御ディレクティブ。
      全て拒否　order allow denyと同じ。  
 -  Limit  
 指定したhttpメソッド（DELETE PUSHなど）のアクセス制御が可能。  
-
+-  Listen  
+受け付けるipアドレスを設定する。IPベースのバーチャルホストにより2つIPアドレスがある場合でも対応可能。  
+-  NameVirtualHost  
+名前ベースバーチャルホストで受け付けるipアドレスを設定する。  
 ■外部設定ファイル  
 ・AccessFileName ファイル名  
 外部設定ファイル名を指定。（デフォルトは.htaccess）  
@@ -92,13 +95,13 @@ httpdをスタートさせた時に立ち上げるhttpd子プロセス数を指�
 
 <h5>プロセス処理</h5>
 
-・Timeout（秒）  
+-  Timeout（秒）  
 クライアントからリクエストを受け取ってからコンテンツ提供終了までの処理上限時間。  
-・KeepAlive [on|off]  
+-  KeepAlive [on|off]  
 1つのTCP接続で複数の接続を受け付けるかどうか。  
 クライアントが1つのWebページを取得する間に、ファイルごとにTCP接続を開始/切断とするのは非効率。  
 →KeepAliveを利用して1つの接続を使いまわすことで複数のリクエストに応じる。  
-・KeepAliveTimeout（秒）  
+-  KeepAliveTimeout（秒）  
 KeepAlive有効状態で、クライアントからのコンテンツ終了しても接続状態を切らない上限時間。  
 
 ■どうしてhttpdで子プロセスを使用するのか。  
