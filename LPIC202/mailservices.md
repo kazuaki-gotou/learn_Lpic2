@@ -18,6 +18,8 @@ sendmailと互換性があり、高機能で、使用方法が簡略化されて
 postfixのMTA各種設定  
     -  mydomain  メールサーバーのドメインを設定する。 
     -  relay_domains  許可されたクライアント以外からのメールで中継を許可するドメインを設定。  
+    -  relayhost  配送の中継サーバを指定する。　　
+    FWなどでインターネットへ抜けられない場合などでメールサーバを指定することでメール配送を可能とする。　　
     -  smtpd_use_tls  yesでTLSを有効化する。  
     -  smtpd_enforce_tls  yesでTLSを強制する。  
     TLSが有効化されていない場合はこの設定も無効になる。（設定依存）  
@@ -77,6 +79,9 @@ SSLについての設定を行う。
     -  ssl yes/no 有効無効　required 必須  
     -  ssl_cert（dovecot1.0はssl_cert_file）  
        ssl証明書が配置されているパス。  
+    -  ssl_key（dovecot1.0はssl_key_file） 
+       サーバ秘密鍵のパス  
+
 ###  コマンド  
 -  doveadm  dovecotの管理コマンド。  
     -  who ログイン中のユーザを表示
@@ -92,13 +97,16 @@ dovecotやサーバサイドのメールソフトで使用される。
 
 ■テスト  
 ■アクション  
- 
+- reject  受信したメールの配送を拒否、送信元にエラーメッセージを返送する。  
 
-###  /var/spool  
+##  knowledge
+- /var/spool  
 一時的に作業用などで配置するディレクトリ。  
-配下にmailやprinterなどのサーバが使用。
-
-##  knowledge  
+配下にmailやprinterなどのサーバが使用。  
+    - /var/spool/mail  
+    受信したメールを格納する
+    - /var/spool/mqueue  
+    メールキュー（送信待ちメール）を格納
 - /etc/aliases  
 メールアドレスの別名について設定できる。(設定後はnewaliasesで更新する。)  
     -  メーリングリスト
