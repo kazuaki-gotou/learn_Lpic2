@@ -17,6 +17,7 @@ sendmailと互換性があり、高機能で、使用方法が簡略化されて
 -  /etc/postfix/main.cf  
 postfixのMTA各種設定  
     -  mydomain  メールサーバーのドメインを設定する。 
+    -  relay_domains  許可されたクライアント以外からのメールで中継を許可するドメインを設定。  
     -  smtpd_use_tls  yesでTLSを有効化する。  
     -  smtpd_enforce_tls  yesでTLSを強制する。  
     TLSが有効化されていない場合はこの設定も無効になる。（設定依存）  
@@ -26,6 +27,8 @@ postfixのMTA各種設定
     -  inet_interfaces メールをどのIPアドレスで受信するかを設定
     -  canonical_maps 送受信アドレスの書き換えで参照する  
         -  sender_canonical_maps 送信アドレスを書き換える　recipient_canonical_maps 受信アドレスを書き換える  
+    -  mydestination 指定したホスト宛のメールをローカルのメールボックスに配送する  
+    -  myorigin 宛先をユーザ名にした場合@以降のドメインを補完する。  
 -  /etc/postfix/master.cf  
 postfixのデーモンの設定  
 
@@ -71,8 +74,9 @@ dovecotの認証方式について設定する。
 ###  /etc/dovecot/conf.d
 -  10-ssl.conf
 SSLについての設定を行う。  
-    -  ssl yes/no 有効無効　required 必須
-
+    -  ssl yes/no 有効無効　required 必須  
+    -  ssl_cert（dovecot1.0はssl_cert_file）  
+       ssl証明書が配置されているパス。  
 ###  コマンド  
 -  doveadm  dovecotの管理コマンド。  
     -  who ログイン中のユーザを表示
