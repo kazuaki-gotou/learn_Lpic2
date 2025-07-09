@@ -38,6 +38,8 @@ apache2.4でのアクセス制御ディレクティブ。
      全て許可　order deny allowと同じ。
   -  require all denied  
      全て拒否　order allow denyと同じ。  
+  -  valid-user  
+     パスワードファイル（.htpasswd）内にある全てのユーザが認証対象。  
 -  Limit  
 指定したhttpメソッド（DELETE PUSHなど）のアクセス制御が可能。  
 -  Listen  
@@ -178,16 +180,21 @@ digest認証は認証情報のやりとりをハッシュ化している為、�
 ・Require  
 認証対象とするユーザやグループを指定する。  
 
-<h4>HTTPS</h4>
+####  HTTPS
 
-<h5>ssl.conf</h5>
+#####  ssl.conf
+
 ```
 # find /etc | grep ssl.conf
 /etc/httpd/conf.d/ssl.conf
 /etc/httpd/conf.modules.d/00-ssl.conf
 ```
+
 HTTPS通信をするためのモジュールであるmod_sslをインストールすると生成されるコンフィグファイル。　　
 サーバ証明書やサーバ秘密鍵のパスについて設定する。　　
+
+■opensslコマンド  
+秘密鍵の作成や、CA証明書の送付などで使用する。  
 
 ■ディレクティブ  
 -  SSLCertificateKeyFile  
@@ -212,6 +219,8 @@ SSLCertificateFile /etc/pki/tls/certs/localhost.crt
 http://example.localdomain/のように/で終わる場合に返答するファイルを指定。  
 -  listen（ip:portnum）  
 ipアドレスポート番号を指定。  
+-  location  
+条件にマッチするURIがリクエストされた場合に実行する。  
 
 ###  squid  
 linuxで最も使用されるプロキシサーバ。  
