@@ -28,12 +28,32 @@ $TTL 3600;
 
 ns              IN A xx.xx.xx.xx //DNSサーバのIPアドレス
 
+# more /var/named/exampletest.local.rev
+$ORIGIN x.168.192.in-addr.arpa.
+$TTL 86400
+@       IN SOA ns.exampletest.local. admin.exampletest.local. (
+
+        2010020101; //シリアル番号
+        3600; //更新タイミング3600秒
+        1200; //更新失敗時のリトライ間隔 秒
+        1209600; //ゾーン情報の有効期間 秒（2週間）　
+        900; //ネガティブキャッシュのTTL 秒
+)
+
+@   IN NS ns.exampletest.local.
+109 IN PTR ns.exampletest.local.
+
 /etc/named.conf
 //exampletest.local
 zone "exampletest.local" IN {
         type master;
         file "/var/named/exampletest.local.zone";
 };
+
+zone "x.168.192.in-addr.arpa" IN {
+        type master;
+        file "/var/named/exampletest.local.rev";
+}
 
 # dig @127.0.0.1 exampletest.local ANY
 
@@ -87,5 +107,12 @@ named起動時に下記のログが出力されたと思われる。
  6月 09 07:43:47 localhost.localdomain systemd[1]: Failed to start Berkeley Internet Name Domain (DNS).
  6月 09 07:43:47 localhost.localdomain systemd[1]: Unit named.service entered failed state.
  6月 09 07:43:47 localhost.localdomain systemd[1]: named.service failed.
+
+```
+
+```/etc/named.conf
+        allow-query     { localhost; locals; };
+// localhostまでがデフォルト　localsはaclで設定している値
+//　anyにするとすべてからの参照許可
 
 ```
