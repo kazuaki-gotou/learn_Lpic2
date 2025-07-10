@@ -50,6 +50,12 @@ postfixをコントロールするコマンド。
 ###  sendmailの設定ファイル  
 /etc/mailディレクトリ配下に設定ファイルを配置。  
 
+###  コマンド  
+-  sendmail  
+    - q メールキューの中身を送信　bp メールキューの中身を確認  
+-  mailq  
+postfixとsendmailのメールキューの中身を確認
+
 ##  dovecot(ダブコット)  
 IMAP/POP3対応のMDA（届いたメールをユーザの受信箱に入れる）  
 メールボックスフォーマットはmbox Maildir  
@@ -118,4 +124,7 @@ dovecotやサーバサイドのメールソフトで使用される。
 debian標準のMTA　
 -  Coutier-IMAP  
 maildirを使用したIMAPサーバ  
-
+-  mbox  
+/var/mail内で1ユーザの全てのメールを1つのファイルにする。  
+-  maildir  
+サブディレクトリに分類し、ユーザのホームディレクトリに1メールを1ファイルとして保存。
