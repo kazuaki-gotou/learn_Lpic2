@@ -72,6 +72,7 @@ PAMの設定についてを取りまとめたディレクトリ。
 
 -  pam_unix.so  
 通常のパスワード認証。  
+    -  nullok 引数。パスワードなしのログインを許可
 -  pam_cracklib.so→pam_pwquality.so  
 パスワードの書式を制限する。  
     -  minlen パスワードに必要な最低文字数を設定。  
@@ -96,6 +97,9 @@ https://blog.trustlogin.com/2022/20221027
 複数のRDNをカンマで区切って並べたもの。エントリ。  
 -  RDN  
 相対識別名。  
+-  objectClass  
+全てのエントリはオブジェクトクラスに帰属するため必須。  
+
 ###  OpenLDAP  
 LDAPサーバのフリーアプリケーション。  
 LDAPサーバのデーモンはslapdで、  
