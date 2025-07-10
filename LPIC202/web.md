@@ -67,10 +67,11 @@ aliasはサーバ側で新しいページをリリースする。
 
 ■モジュール  
 ・LoadModule  
-動的モジュールをロードできる。　　
+動的モジュールをロードできるディレクティブ。　　
 httpd.conf→Dynamic Shared Object (DSO) Support  
 Ex）LoadModule foo_module modules/mod_foo.so  
-
+・apxs  
+動的モジュールをコンパイルとインストールできるコマンド。  
 ・[静的|動的]モジュール  
 静的モジュールはapacheの起動時に必要なモジュールで、Apache本体に組み込まれる。  
 動的モジュール（DSO）はhttpd.confのLoadModuleで有効無効の設定が可能。  
