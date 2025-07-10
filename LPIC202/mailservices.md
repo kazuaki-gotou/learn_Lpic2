@@ -26,7 +26,8 @@ postfixのMTA各種設定
     -  mail_spool_directory  メールスプール先を指定  
         -  mbox  ユーザごとに1ファイルに保存
         -  Mairdir  1メール1ファイルに保存  
-    -  inet_interfaces メールをどのIPアドレスで受信するかを設定
+    -  inet_interfaces メールをどのIPアドレスで受信するかを設定  
+    -  mailbox_command ローカル配送をするMDA（プログラム）を指定する。  
     -  canonical_maps 送受信アドレスの書き換えで参照する  
         -  sender_canonical_maps 送信アドレスを書き換える　recipient_canonical_maps 受信アドレスを書き換える  
     -  mydestination 指定したホスト宛のメールをローカルのメールボックスに配送する  
