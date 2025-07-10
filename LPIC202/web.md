@@ -242,7 +242,7 @@ squidは/etc/squid/squid.confが設定ファイル。
 -  request_header_max_size  
 httpリクエストヘッダの最大サイズを指定する。  
 -  cache_dir  
-キャッシュ用のディスク領域のディレクトリパスやサイズを指定する。  
+キャッシュ用のディスク領域のディレクトリパスやサイズを指定する。キャッシュをハードディスクに保存することでパフォーマンス向上。  
 [text](http_compose.md)  
 -  hierarchy_stop_list  
 キャッシュを利用しない文字列を指定。  
