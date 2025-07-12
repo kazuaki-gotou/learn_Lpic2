@@ -78,3 +78,67 @@ public (active)
 Hint: Some lines were ellipsized, use -l to show in full.
 ```
 
+```  useradd
+#pdbedit -a testCentOS
+new password:
+retype new password:
+Unix username:        testCentOS
+NT username:
+Account Flags:        [U          ]
+User SID:             S-1-5-21-271714995-2932044201-234104226-1001
+Primary Group SID:    S-1-5-21-271714995-2932044201-234104226-513
+Full Name:
+Home Directory:       \\centos7\testcentos
+HomeDir Drive:
+Logon Script:
+Profile Path:         \\centos7\testcentos\profile
+Domain:               CENTOS7
+Account desc:
+Workstations:
+Munged dial:
+Logon time:           0
+Logoff time:          木, 07  2月 2036 00:06:39 JST
+Kickoff time:         木, 07  2月 2036 00:06:39 JST
+Password last set:    土, 12  7月 2025 10:08:25 JST
+Password can change:  土, 12  7月 2025 10:08:25 JST
+Password must change: never
+Last bad password   : 0
+Bad password count  : 0
+Logon hours         : FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+
+# vim /etc/samba/smb.conf
+[homes]
+        comment = Home Directories
+        valid users = otheruser, testCentOS
+
+Windows側のエクスプローラーで下記を実行する。
+\\IPアドレス\testCentOS
+資格情報を入力してログイン。
+
+windows側でsambaログインユーザ変更をしたい場合は、
+コマンドプロンプトでnet use
+接続情報が出てくるので、net use \\IPアドレス\testCentOS /delete
+で消去。
+
+＃ smbstatus
+
+Samba version 4.10.16
+PID     Username     Group        Machine                                   Protocol Version  Encryption           Signing
+----------------------------------------------------------------------------------------------------------------------------------------
+1919    testCentOS   testCentOS   IPアドレス (ipv4:IPアドレス:56967)    SMB3_11           -                    partial(AES-128-CMAC)
+
+Service      pid     Machine       Connected at                     Encryption   Signing
+---------------------------------------------------------------------------------------------
+testCentOS   1919    IPアドレス  土  7月 12 10時28分34秒 2025 JST -            -
+他のユーザ      1919    IPアドレス  土  7月 12 10時28分30秒 2025 JST -            -
+
+Locked files:
+Pid          User(ID)   DenyMode   Access      R/W        Oplock           SharePath   Name   Time
+--------------------------------------------------------------------------------------------------
+1919         1001       DENY_NONE  0x100081    RDONLY     NONE             /home/testCentOS   .   Sat Jul 12 10:28:33 2025
+1919         1001       DENY_NONE  0x100081    RDONLY     NONE             /home/testCentOS   .   Sat Jul 12 10:28:33 2025
+1919         1001       DENY_NONE  0x100081    RDONLY     NONE             /home/testCentOS   .   Sat Jul 12 10:28:33 2025
+
+
+```
+
