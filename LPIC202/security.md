@@ -5,6 +5,10 @@
 sysctlコマンドで設定した値は再起動すると消去される。  
 →/etc/sysctl.confに設定を記述すると設定が有効になる。  
   （システム起動時にsysctl -p（/etc/sysctl.confの設定を有効にする）が実行されるため。）  
+-  /proc/sys/net/ipv4/tcp_syncookies  
+tcpセッションの正当性確認の設定の有効無効を設定。tcpflood攻撃の対策。  
+echo 1 > /proc/sys/net/ipv4/tcp_syncookiesにて有効にする。（無効化する場合は0）  
+-  
 
 ###  iptables
 -  テーブル  
@@ -36,7 +40,9 @@ ftpサーバにログインを禁止するユーザを指定する。
 設定はpure-ftpd.confで行う。  
 起動時オプション  
 -  e 匿名ユーザのみログイン許可する。/E　匿名ユーザ利用不可  
-
+####  vsftpd  
+セキュリティが高く、パフォーマンスに優れたFTPサーバ。  
+多くのディストリビューションでFTPサーバとして標準採用されている。設定ファイルはvstfp.conf  
 ###  SSH  
 ####  openssh  
 #####  /etc/ssh/sshd_config  
