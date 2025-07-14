@@ -29,8 +29,15 @@ echo 1 > /proc/sys/net/ipv4/tcp_syncookiesにて有効にする。（無効化�
 -  iptables-save  
 ルールのバックアップや一覧表示に使用する。  
 ipv6ではip6tables-saveコマンド  
+-  iptables -t nat -A POSTROUTING ルール　
+IPマスカレード　NAPTの設定コマンド  
 
 ###  FTP  
+-  ACTIVE（アクティブモード）  
+データ転送用のポートの接続要求をサーバ側から行う。データ転送TCP20 データ制御TCP21
+-  PASV（パッシブモード）  
+データ転送用ポートの接続要求をクライアント側から行う。  データ転送は適当なTCPポート番号。データ制御はTCP21
+サーバ側も対応している。  
 ####  設定ファイル  
 -  /etc/ftpusers  
 ftpサーバにログインを禁止するユーザを指定する。  
