@@ -17,7 +17,11 @@ httpd.confの構文チェックをする。
 
 ####  ディレクティブ  
 
-設定ファイルの中でデーモンに動作の指示を与える。  
+設定ファイルの中でデーモンに動作の指示を与える。 
+
+■適用範囲指定  
+-  <location></location>  指定のURLごとの設定  
+-  <directory></directory>  指定のディレクトリごとの設定  
 
 ■セキュリティ  
 - TraceEnable on/off  
