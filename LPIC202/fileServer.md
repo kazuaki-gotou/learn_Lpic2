@@ -10,7 +10,6 @@ sambaサーバの設定ファイル。
 1.[global]セクション  
 samba全般の設定を行う。  
 globalセクション以降のセクションで設定した項目が現れた場合は上書きする。（globalでの設定はその他セクションのデフォルト値になる）  
-
 -  security  
 認証方法を設定する。  
     -  user  ユーザレベルでの認証
@@ -28,10 +27,15 @@ sambaの動作モードを設定する。
 ADサーバのドメインコントローラーになる。  
     -  standalone  
 スタンドアロンサーバになる。  
-
+-  map to guast  
+ユーザが認証できなかった場合のゲスト認証動作を設定する。  
+    -  Never  ゲスト認証しない  
+    -  Bad Password  パスワードミスでもゲスト認証する。  
+    -  Bad User  存在しないユーザの場合はゲスト認証する。  
 -  realm  
 activedirectryのドメイン名（realm）を指定。  
-
+-  logon script = スクリプト名  
+ログインした際に実行するスクリプトファイルを指定する。
 -  wins server （ipアドレス） 
 winsサーバーのipを指定する。  
 -  wins support  
