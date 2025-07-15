@@ -67,6 +67,9 @@ sshd（opensshのデーモン）の設定ファイル。
 -  X11Forwarding yes/no  
 X11（xwindow）の通信を許可拒否  
 
+###  openvpn  
+linuxでvpn機能を提供するアプリケーション。  
+/etc/openvpn/server.confに設定ファイルがある。  
 ##  ナレッジ  
 -  CERT  
 セキュリティインシデントを受け付け、技術支援などを行う。  
