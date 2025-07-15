@@ -1,4 +1,4 @@
-#  DNS  
+#  DNStest  
 
 ##  リソースレコード
 -  PTR  
