@@ -150,7 +150,7 @@ IPベースのバーチャルホストの場合は1つのIPにつき1つのド�
 また、SSL通信前ではどのホストとの通信かを判別するhttpヘッダを確認することができない。  
 クライアント側もSNIに対応するブラウザでなければならない。（ほぼ対応している）  
 
-<h4>認証</h4>
+###  認証
 
 ・BASIC認証とdigest認証  
 apacheによるアクセス制限。アクセスのために予め登録しているユーザーネームとパスワードが必要。  
@@ -185,7 +185,7 @@ digest認証は認証情報のやりとりをハッシュ化している為、�
 ・Require  
 認証対象とするユーザやグループを指定する。  
 
-####  HTTPS
+###  HTTPS
 
 #####  ssl.conf
 
@@ -215,11 +215,12 @@ SSLCertificateFile /etc/pki/tls/certs/localhost.crt
 -  SSLCACertificatePath（複数指定）  
 クライアント認証に使用するCA証明書のファイルが存在するディレクトリパスを指定する。  
 
+###  nginx
 ####  nginx.conf  
 -  コンテキスト  
 ディレクティブの中で階層を持つことができるもの。  
 
-#####  nginxディレクティブ  
+####  nginxディレクティブ  
 -  index  
 http://example.localdomain/のように/で終わる場合に返答するファイルを指定。  
 -  listen（ip:portnum）  
@@ -227,14 +228,14 @@ ipアドレスポート番号を指定。
 -  location  
 条件にマッチするURIがリクエストされた場合に実行する。  
 
-###  squid  
+##  squid  
 linuxで最も使用されるプロキシサーバ。  
 プロキシはクライアントからのアクセス代行をすることにより、アクセス制限を行うことができたり、
 アクセスされたデータをキャッシュとして保存し、再アクセスではキャッシュを返すことでアクセススピードを上げる。  
 
 squidは/etc/squid/squid.confが設定ファイル。 
 
-####  squid.conf  
+###  squid.conf  
 -  http_port （portnum）  
 クライアントからのリクエストを受け付けるポートを指定。  
 -  cache_mem  
@@ -255,12 +256,14 @@ cgi-binや?などのキーワードは動的コンテンツのURLで頻発する
 #####  squidのacl
 
 squid.conf内に記載する。  
-aclで制御したいアドレスレンジやポートなどのacl情報を指定してグループ化。 
-書式　acl (aclグループ名)　src 192.168.0.0/255.255.255.0（src/dstなどのタイプ） 
-http_accessで制御を設定。（allowdeny）  
-書式　http_access allow (aclグループ名)  
+■aclで制御したいアドレスレンジやポートなどのacl情報を指定してグループ化。 
+書式　acl (aclグループ名)　src 192.168.0.0/255.255.255.0（src/dstなどのタイプ）  
+-  proto　プロトコルを指定  
 -  srcdomain ドメイン名  
 クライアントのドメイン名
 -  dstdomain ドメイン名  
 宛先ドメイン名  
+
+■http_accessで制御を設定。（allowdeny）  
+書式　http_access allow (aclグループ名) 
 
