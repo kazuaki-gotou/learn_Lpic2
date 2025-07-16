@@ -263,6 +263,7 @@ squid.conf内に記載する。
 クライアントのドメイン名
 -  dstdomain ドメイン名  
 宛先ドメイン名  
+-  proxy_auth 認証ユーザかどうかを判別する  
 
 ■http_accessで制御を設定。（allowdeny）  
 書式　http_access allow (aclグループ名) 
