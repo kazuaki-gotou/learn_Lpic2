@@ -215,6 +215,13 @@ SSLCertificateFile /etc/pki/tls/certs/localhost.crt
 -  SSLCACertificatePath（複数指定）  
 クライアント認証に使用するCA証明書のファイルが存在するディレクトリパスを指定する。  
 
+■自己認証局
+ssl証明書について自己で署名することが可能。  
+（オレオレ）  
+-  CA.sh -newca（Openssl 1.0.2hまで）  
+-  CA.pl -newca（Openssl 1.1.0以降）
+自己認証局の構築には上記スクリプトを使用する。  
+
 ###  nginx
 ####  nginx.conf  
 -  コンテキスト  

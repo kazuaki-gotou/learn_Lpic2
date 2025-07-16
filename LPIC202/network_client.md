@@ -30,6 +30,8 @@ ipアドレス（グローバルアドレス、ユニークローカル）、DNS
 DHCPリレーのデーモン。  
 -  dhcpcd/dhclient  
 DHCPクライアント  
+dhclient -r/dhcpcd -kでIPアドレスをリリースし、dhclient/dhcpcdで取得できる。
+
 ####  知識
 -  NIS（Network Information Service） 
 UNIX系システムで使用されるネットワーク管理サービスの一つ。（ディレクトリサービス）  
