@@ -24,6 +24,7 @@ linuxカーネルにnetfilter機能がありそれを利用するコマンド。
     -  forward  ローカルホストから経由される通信を制御
     -  output  
     ローカルホストから送信される通信を制御
+
 ####  iptablesコマンド  
 -  F  チェインの中のルールを全削除  
 -  X  ルールを保持していないチェインを削除。チェイン名を指定しない場合はルールを保持しない全チェインを削除。  
@@ -37,6 +38,8 @@ linuxカーネルにnetfilter機能がありそれを利用するコマンド。
 ipv6ではip6tables-saveコマンド  
 -  iptables -t nat -A POSTROUTING ルール　
 IPマスカレード　NAPTの設定コマンド  
+-  -j ターゲットの指定（logなど）　-p プロトコルの指定（tcpudp）　-o/-i 送信/受信するIFを指定  
+
 
 ###  FTP  
 -  ACTIVE（アクティブモード）  
