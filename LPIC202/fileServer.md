@@ -19,6 +19,8 @@ globalセクション以降のセクションで設定した項目が現れた�
 securityがuserの場合に認証方式を指定する。（複数可）  
 -  smb passwd file = ファイル名  
 securityがuserの場合にsmbpasswdで使用するパスワードファイルを指定。
+-  encrypt passwords  yes/no  
+暗号化されたパスワードを使用するかを指定する。
 -  server role (サーバの役割)  
 sambaの動作モードを設定する。  
     -  member server  
@@ -33,7 +35,13 @@ ADサーバのドメインコントローラーになる。
     -  Bad Password  パスワードミスでもゲスト認証する。  
     -  Bad User  存在しないユーザの場合はゲスト認証する。  
 -  realm  
-activedirectryのドメイン名（realm）を指定。  
+activedirectryのドメイン名（realm）を指定。 
+-  log file ファイル名  
+ログ出力するファイルを指定。変数%m指定で接続ホストごとのログファイルを生成する。  
+-  log level  
+ログレベルを指定する。  
+-  max log size  
+ログファイルの最大値を指定。最大値を超えると新しいファイルを作成する。  
 -  logon script = スクリプト名  
 ログインした際に実行するスクリプトファイルを指定する。
 -  wins server （ipアドレス） 
