@@ -123,7 +123,7 @@ slapdの起動時にslapd -fに続けてファイルを指定して起動も可�
 -  olcaccess  
 アクセス制御のディレクティブ。  
 -  olcbackend  
-バックエンドを指定。  
+バックエンドで使用できるtypeを指定。指定できるtype（config ldif passwd bdb ldap）  
 ####  openldapのコマンド  
 -  slapcat  
 slapdデータベースの内容を基にldifを生成する。  

@@ -43,7 +43,11 @@ apache2.4でのアクセス制御ディレクティブ。
   -  require all denied  
      全て拒否　order allow denyと同じ。  
   -  valid-user  
-     パスワードファイル（.htpasswd）内にある全てのユーザが認証対象。  
+     パスワードファイル（.htpasswd）内にある全てのユーザが認証対象。 
+-  method  
+指定したhttpメソッド（GETなど）に合致した場合許可
+-  expr  
+指定した条件式に合致した場合許可
 -  Limit  
 指定したhttpメソッド（DELETE PUSHなど）のアクセス制御が可能。  
 -  Listen  
@@ -99,8 +103,6 @@ httpdをスタートさせた時に立ち上げるhttpd子プロセス数を指�
 ・MaxRequestWorkers　子プロセス数  
 生成されるhttpd子プロセスの最大数を指定。  
 (同時応答リクエスト数を指定。)  
-
-<h5>プロセス処理</h5>
 
 -  Timeout（秒）  
 クライアントからリクエストを受け取ってからコンテンツ提供終了までの処理上限時間。  
@@ -177,7 +179,7 @@ digest認証は認証情報のやりとりをハッシュ化している為、�
 -  mod_authz_host  
     ホストベースのアクセス制御（apache2.4での動作互換→mod_access_compat　order allow denyの書式をそのまま利用できる。）
 
-<h5>認証に関するディレクティブ</h5>
+#####  認証に関するディレクティブ
 
 ・AuthType  
 認証方式を指定する。(basic digest)  
