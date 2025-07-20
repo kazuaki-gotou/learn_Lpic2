@@ -266,7 +266,8 @@ cgi-binや?などのキーワードは動的コンテンツのURLで頻発する
 
 squid.conf内に記載する。  
 ■aclで制御したいアドレスレンジやポートなどのacl情報を指定してグループ化。 
-書式　acl (aclグループ名)　src 192.168.0.0/255.255.255.0（src/dstなどのタイプ）  
+書式  
+acl (aclグループ名)　src 192.168.0.0/255.255.255.0（src/dstなどのタイプ）  
 -  proto　プロトコルを指定  
 -  srcdomain ドメイン名  
 クライアントのドメイン名
@@ -276,4 +277,6 @@ squid.conf内に記載する。
 -  arp アクセス制御対象のmacアドレスを指定
 ■http_accessで制御を設定。（allowdeny）  
 書式　http_access allow (aclグループ名) 
-
+-  url_regex  正規表現を用いてURLを指定
+url_regex "/home/blacklist"ファイル名blacklistを指定する場合  
+ファイル内に指定の表現がある場合上記記載。ファイルを指定する場合は""で囲む。　　

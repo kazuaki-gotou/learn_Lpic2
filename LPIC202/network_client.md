@@ -82,7 +82,9 @@ PAMの設定についてを取りまとめたディレクトリ。
 -  pam_securetty.so  
 rootユーザでのログインを/etc/securettyファイルに記載の端末（/dev配下のtty1などの端末名）以外拒否する。  
 -  pam_nologin.so  
-/etc/nologinがある場合、root以外のログインをできないようにする。
+/etc/nologinがある場合、root以外のログインをできないようにする。　　
+nologinファイルそのものは管理者が手動作成でき、存在する場合はroot以外ログインができないようになる。  
+
 -  pam_deny.so  
 認証をすべて拒否する。  
 -  pam_warn.so  
@@ -133,6 +135,8 @@ slapdの起動時にslapd -fに続けてファイルを指定して起動も可�
 アクセス制御のディレクティブ。  
 -  olcbackend  
 バックエンドで使用できるtypeを指定。指定できるtype（config ldif passwd bdb ldap）  
+-  olcdatabase  
+バックエンドデータベースの種類を指定。
 ####  openldapのコマンド  
 -  slapcat  
 slapdデータベースの内容を基にldifを生成する。  
