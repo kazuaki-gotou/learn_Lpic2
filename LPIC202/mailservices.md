@@ -35,6 +35,7 @@ postfixのMTA各種設定
 -  /etc/postfix/master.cf  
 postfixのデーモンの設定  
 
+
 ###  コマンド  
 -  postconf  
 postfixの設定内容を確認できる。  
