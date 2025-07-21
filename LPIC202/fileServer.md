@@ -7,6 +7,10 @@ SMB/CIFSによるwindows系ファイル共有システム
 sambaサーバの設定ファイル。  
 
 ####  予約済みセクション  
+-  samba変数  
+%U セッションのユーザ名に置換される。
+%m クライアントのNETBIOS名  
+%v sambaバージョン番号
 1.[global]セクション  
 samba全般の設定を行う。  
 globalセクション以降のセクションで設定した項目が現れた場合は上書きする。（globalでの設定はその他セクションのデフォルト値になる）  
@@ -19,6 +23,8 @@ globalセクション以降のセクションで設定した項目が現れた�
 securityがuserの場合に認証方式を指定する。（複数可）  
 -  smb passwd file = ファイル名  
 securityがuserの場合にsmbpasswdで使用するパスワードファイルを指定。
+-  encrypt passwords  yes/no  
+暗号化されたパスワードを使用するかを指定する。
 -  server role (サーバの役割)  
 sambaの動作モードを設定する。  
     -  member server  
@@ -33,7 +39,13 @@ ADサーバのドメインコントローラーになる。
     -  Bad Password  パスワードミスでもゲスト認証する。  
     -  Bad User  存在しないユーザの場合はゲスト認証する。  
 -  realm  
-activedirectryのドメイン名（realm）を指定。  
+activedirectryのドメイン名（realm）を指定。 
+-  log file ファイル名  
+ログ出力するファイルを指定。変数%m指定で接続ホストごとのログファイルを生成する。  
+-  log level  
+ログレベルを指定する。  
+-  max log size  
+ログファイルの最大値を指定。最大値を超えると新しいファイルを作成する。  
 -  logon script = スクリプト名  
 ログインした際に実行するスクリプトファイルを指定する。
 -  wins server （ipアドレス） 
@@ -57,6 +69,10 @@ unixユーザの各ホームディレクトリを一括して共有するため�
    書き込みを許可するかどうかを設定  
 -  writelist=[ユーザ名|@グループ名]  
    writeableで書き込みが禁止されていても、書き込みができるユーザを指定する。  
+-  hide files =  
+表示させないファイルを指定。アクセスは可能。
+-  veto files =  
+表示させないファイルを指定。アクセス不可。
 -  comment  
 ブラウジングした際に表示される文章。  
 
