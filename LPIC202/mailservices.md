@@ -23,6 +23,8 @@ postfixのMTA各種設定
     -  smtpd_use_tls  yesでTLSを有効化する。  
     -  smtpd_enforce_tls  yesでTLSを強制する。  
     TLSが有効化されていない場合はこの設定も無効になる。（設定依存）  
+    -  smtpd_tls_security_level  
+    postfix2.3以降で使用。tlsの使用について指定できる。may有効　encrypt強制  
     -  mail_spool_directory  メールスプール先を指定  
         -  mbox  ユーザごとに1ファイルに保存
         -  Mairdir  1メール1ファイルに保存  
@@ -32,6 +34,8 @@ postfixのMTA各種設定
         -  sender_canonical_maps 送信アドレスを書き換える　recipient_canonical_maps 受信アドレスを書き換える  
     -  mydestination 指定したホスト宛のメールをローカルのメールボックスに配送する  
     -  myorigin 宛先をユーザ名にした場合@以降のドメインを補完する。  
+    -  disable_vrfy_command  
+    SMTPコマンドのVRFYの有効無効を指定する。  
 -  /etc/postfix/master.cf  
 postfixのデーモンの設定  
 
@@ -46,6 +50,9 @@ postfixをコントロールするコマンド。
     -  stop postfixを適切に停止する。  
     -  abort postfixを強制停止する。  
     -  flush メールキュー内のメールを直ちに再送する。  
+-  smtp  
+メールの送受信の制御を行うコマンド。  
+    -  リモートのサーバやクライアントがユーザ（postfix）のメールアカウントが存在するか確認するコマンド。
 ##  sendmail  
 
 ###  sendmailの設定ファイル  
@@ -131,3 +138,5 @@ maildirを使用したIMAPサーバ
 /var/mail内で1ユーザの全てのメールを1つのファイルにする。  
 -  maildir  
 サブディレクトリに分類し、ユーザのホームディレクトリに1メールを1ファイルとして保存。
+-  オープンメールリレー  
+MTA同士のメール転送をリレーと呼び、誰からのメール転送や送信を受け付けるMTAの設定をオープンメールリレーという。スパムメールの温床。  

@@ -16,7 +16,9 @@ linuxカーネルにnetfilter機能がありそれを利用するコマンド。
 -  テーブル  
 いくつかのチェインのセットのこと  
     -  filter フィルタリング  
+    INPUT OUTPUT FORWARDが使用可能  
     -  nat  アドレス変換  
+    INPUT OUTPUT PREROUTING POSTROUTINGが使用可能  
     -  mangle  パケットのヘッダの書き換えを行う  
     -  raw コネクションの追跡を行わない  
 -  チェイン  

@@ -6,7 +6,7 @@
 
 サーバプログラム（デーモン）  
 起動すると設定ファイルにあたる、  
-httpd.conf（rhel10のデフォルトは/etc/httpd/conf/httpd.confだった）を読み込み、  
+httpd.conf（rhel10のデフォルトは/etc/httpd/conf/httpd.confだった　redhatは/etc/httpd/conf/httpd.conf debianは/etc/apache2/apache2.conf）を読み込み、  
 記載されているディレクティブに従って動作する。  
 各ディレクティブはどのコンテキストで使用できるかが定められている。  
 
@@ -58,7 +58,7 @@ apache2.4でのアクセス制御ディレクティブ。
 ・AccessFileName ファイル名  
 外部設定ファイル名を指定。（デフォルトは.htaccess）  
 ・AllowOverride パラメータ  
-外部設定ファイルにより、httpd.confの上書きを許可するかどうか。  
+外部設定ファイルにより、httpd.confの上書きを許可するかどうか。directoryセクション配下で使用。  
 -  AuthConfig  
    認証関係の設定を許可。  
 -  All すべての設定を許可。　None すべての設定を拒否。　　Limit  Order Allow Denyディレクティブを許可。  
