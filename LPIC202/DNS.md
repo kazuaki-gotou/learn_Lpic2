@@ -146,6 +146,7 @@ namedを直ちに停止させる。
 動的更新などを保存してからnamedを停止させる。  
 -  rndc reload  
 設定ファイル（/etc/named.conf およびゾーンファイル）を再読み込みして有効化する。（問い合わせ等は失われない） 
+ゾーンを指定することで単独ゾーンのリロードを行う。  
 他同様のコマンド    
 /etc/init.d/named restart  (service named restart)  
 kill -HUP `cat /var/run/named.pid`  
