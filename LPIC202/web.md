@@ -238,6 +238,8 @@ ssl証明書について自己で署名することが可能。
 ディレクティブの中で階層を持つことができるもの。  
 
 ####  nginxディレクティブ  
+-  root  
+webで公開するhtmlを保存する最上位のパス、ドキュメントルートを指定する。
 -  index  
 http://example.localdomain/のように/で終わる場合に返答するファイルを指定。  
 -  listen（ip:portnum）  
