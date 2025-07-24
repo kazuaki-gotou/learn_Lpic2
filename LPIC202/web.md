@@ -65,11 +65,15 @@ apache2.4でのアクセス制御ディレクティブ。
 -  NameVirtualHost  
 名前ベースバーチャルホストで受け付けるipアドレスを設定する。  
 -  ServerName  
-サーバのホスト名を指定する。  
+サーバのホスト名とポートnumを指定する。  
     -  ServerAlias  
     名前ベースバーチャルホストでの別名を指定。  
 -  ServerAdmin  
 エラーの際のエラー画面に表示するメールアドレスを指定。エラー時に都度メールアドレスを送付するわけではない。  
+-  DocumentRoot  
+ウェブで公開するファイルを格納するベースのディレクトリを指定する  
+-  ServerRoot  
+httpdの設定ファイルや関連コマンドなどを格納するベースのディレクトリ  
 ■外部設定ファイル  
 ・AccessFileName ファイル名  
 外部設定ファイル名を指定。（デフォルトは.htaccess）  
@@ -104,6 +108,8 @@ Ex）LoadModule foo_module modules/mod_foo.so
 ・HostnameLookups[on|off]  
 ログに出力されるIPアドレスを逆引きしてホスト名にする。  
 接続数が増えると負荷が高くなるため、通常はoff。  
+・LogFormat　アクセスログに使用される書式を指定。  
+・CustomLog　アクセスログのファイル名とlogformatで指定された書式を指定。  
 ・LogLevel エラーログに出力するログレベルを指定する。  
 ・ErrorLog エラーログファイルを指定する。  
 ・User  ユーザ名orユーザID
@@ -218,6 +224,9 @@ HTTPS通信をするためのモジュールであるmod_sslをインストー�
 
 ■opensslコマンド  
 秘密鍵の作成や、CA証明書の送付などで使用する。  
+
+-  openssl ca -out 出力ファイル（サーバ証明書） -infiles CSRファイル名  
+CSRファイルに署名し、サーバ証明書を出力する。  
 
 ■ディレクティブ  
 -  SSLCertificateKeyFile  
