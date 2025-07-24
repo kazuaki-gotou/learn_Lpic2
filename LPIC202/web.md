@@ -12,8 +12,10 @@ httpd.conf（rhel10のデフォルトは/etc/httpd/conf/httpd.confだった　re
 
 ###  httpd.conf  
 
-apachectl configtest  
+apachectl（apachectl2） configtest  
 httpd.confの構文チェックをする。  
+apachectl（apachectl2） stop  
+apacheを止める  
 
 ####  ディレクティブ  
 
@@ -41,7 +43,13 @@ apache2.4でのアクセス制御ディレクティブ。
   -  require all granted  
      全て許可　order deny allowと同じ。
   -  require all denied  
-     全て拒否　order allow denyと同じ。  
+     全て拒否　order allow denyと同じ。 
+　-  Require All  
+　   全ての条件に合致したら真  
+  -  Require Any  
+     いずれかの条件に合致したら真  
+  -  Require None  
+     全ての条件に合致しなければ真
   -  valid-user  
      パスワードファイル（.htpasswd）内にある全てのユーザが認証対象。 
 -  method  
