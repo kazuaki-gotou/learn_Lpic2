@@ -28,6 +28,8 @@ httpd -M
 ■適用範囲指定  
 -  <location></location>  指定のURLごとの設定  
 -  <directory></directory>  指定のディレクトリごとの設定  
+-  <IFModule モジュール></IFModule>  
+指定したモジュールが有効な場合の設定（無効の場合は無視）
 
 ■セキュリティ  
 - TraceEnable on/off  
@@ -76,8 +78,12 @@ apache2.4でのアクセス制御ディレクティブ。
 エラーの際のエラー画面に表示するメールアドレスを指定。エラー時に都度メールアドレスを送付するわけではない。  
 -  DocumentRoot  
 ウェブで公開するファイルを格納するベースのディレクトリを指定する  
+-  ErrorDocument　エラーコード　ファイル名urlその他  
+エラーコードに対応するエラー発生時の対応を指定する。  
 -  ServerRoot  
 httpdの設定ファイルや関連コマンドなどを格納するベースのディレクトリ  
+-  DirectoryIndex  
+URLの後ろにファイル名が指定されていない場合に表示するファイル名を指定する。  
 ■外部設定ファイル  
 ・AccessFileName ファイル名  
 外部設定ファイル名を指定。（デフォルトは.htaccess）  
