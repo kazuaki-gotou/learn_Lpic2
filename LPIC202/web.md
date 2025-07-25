@@ -16,6 +16,10 @@ apachectl（apachectl2） configtest
 httpd.confの構文チェックをする。  
 apachectl（apachectl2） stop  
 apacheを止める  
+apachectl -l  httpd -l  
+静的モジュールの一覧を確認できる。  
+httpd -M  
+静的動的モジュールの一覧を確認できる。
 
 ####  ディレクティブ  
 
@@ -252,7 +256,9 @@ ssl証明書について自己で署名することが可能。
 ###  nginx
 ####  nginx.conf  
 -  コンテキスト  
-ディレクティブの中で階層を持つことができるもの。  
+ディレクティブの中で階層を持つことができるもの。
+-  http  
+httpサーバとしてのの設定ができる。  
 
 ####  nginxディレクティブ  
 -  root  
