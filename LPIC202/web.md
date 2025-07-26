@@ -28,6 +28,8 @@ httpd -M
 ■適用範囲指定  
 -  <location></location>  指定のURLごとの設定  
 -  <directory></directory>  指定のディレクトリごとの設定  
+-  <IFModule モジュール></IFModule>  
+指定したモジュールが有効な場合の設定（無効の場合は無視）
 
 ■セキュリティ  
 - TraceEnable on/off  
