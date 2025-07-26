@@ -36,7 +36,7 @@ httpd -M
 traceメソッド（クライアントからのリクエストをそのまま返す）の有効無効を設定。  
 BASIC認証のユーザ名パスワードを盗まれる可能性があるためOFF推奨。  
 - ServerTokens   
-クライアントに対しての返信の応答ヘッダに何を含めるのかを記載。  
+クライアントに対しての返信の応答ヘッダにどの情報を含めるのかを記載。  
 apacheのバージョンを含めないことができる。  
 
 ■アクセス制御  
@@ -161,7 +161,9 @@ worker
 
 CGI  
 common gateway interface  
-WEBサーバがphpやPythonなどの外部プログラムから処理を受け取る、橋渡しをするIF。  
+WEBサーバがphpやPythonなどの外部プログラムから処理を受け取る、橋渡しをするIF。 
+LoadModuleで必要なモジュールをロードして、ScriptAliasディレクティブでCGIプログラムがあるディレクトリを指定する。   
+LoadModuleとScriptAliasについては相互依存性がある。
 
 fastCGI  
 CGIの改良版。  
