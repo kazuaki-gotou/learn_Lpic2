@@ -343,6 +343,8 @@ AddDefaultCharset UTF-8
 #ErrorDocument 404 "/cgi-bin/missing_handler.pl"
 #ErrorDocument 402 http://www.example.com/subscription_info.html
 #
+ErrorDocument 404 /error.html
+#/var/www/html配下にドキュメントルートを配置する。
 
 #
 # EnableMMAP and EnableSendfile: On systems that support it,

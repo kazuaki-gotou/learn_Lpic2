@@ -236,3 +236,39 @@ refresh_pattern ^ftp:           1440    20%     10080
 refresh_pattern -i (/cgi-bin/|\?) 0     0%      0
 refresh_pattern .               0       20%     4320
 ```
+
+###  SSL.conf
+
+```
+Listen 443
+ServerName www.exampletest.local:443
+SSLCertificateKeyFile /usr/local/ssl/server.key
+SSLCertificateFile /usr/local/ssl/server.crt
+SSLVerifyClient require
+SSLEngine on
+```
+
+####  port443の重複
+
+```
+# systemctl restart httpd
+Job for httpd.service failed because the control process exited with error code. See "systemctl status httpd.service" and "journalctl -xe" for details.
+
+# journalctl -xe --no-pager
+- Unit httpd.service has begun starting up.
+ 7月 27 10:09:42 localhost.localdomain httpd[3982]: (98)Address already in use: AH00072: make_sock: could not bind to address [::]:443
+ 7月 27 10:09:42 localhost.localdomain systemd[1]: httpd.service: main process exited, code=exited, status=1/FAILURE
+ 7月 27 10:09:42 localhost.localdomain systemd[1]: Failed to start The Apache HTTP Server.
+-- Subject: Unit httpd.service has failed
+
+Address already in useからすでに使われているとの予想。
+しかし、lsof -i:443でも使用されていないし、ほかのHTTPサーバ（nginx）も起動していない状態。
+→
+生成AIに解決してもらうことになった
+# grep -r "Listen 443" /etc/httpd
+/etc/httpd/conf/SSL.conf:Listen 443
+/etc/httpd/conf.d/ssl.conf:Listen 443 https
+
+Listenが2つある状態であった。
+SSL.confは自分が作成。
+```
