@@ -16,6 +16,8 @@ apachectl（apachectl2） configtest
 httpd.confの構文チェックをする。  
 apachectl（apachectl2） stop  
 apacheを止める  
+apachectl graceful  
+apacheを安全に再起動する。（リクエスト処理中であれば再起動処理を止める。）  
 apachectl -l  httpd -l  
 静的モジュールの一覧を確認できる。  
 httpd -M  
@@ -57,7 +59,8 @@ apache2.4でのアクセス制御ディレクティブ。
   -  Require None  
      全ての条件に合致しなければ真
   -  valid-user  
-     パスワードファイル（.htpasswd）内にある全てのユーザが認証対象。 
+     パスワードファイル（.htpasswd）内にある全てのユーザが認証対象。 認証されたユーザのみ許可。
+
 -  method  
 指定したhttpメソッド（GETなど）に合致した場合許可
 -  expr  
@@ -213,7 +216,7 @@ digest認証は認証情報のやりとりをハッシュ化している為、�
      認証や認可の枠組みそのもので、基盤であり土台。  
      その他のモジュールとの連携の中心。  
 -  mod_authz_host  
-    ホストベースのアクセス制御（apache2.4での動作互換→mod_access_compat　order allow denyの書式をそのまま利用できる。）
+    ホストベースのアクセス制御で、Require ipなど新しい構文で使用できる。（apache2.4での動作互換→mod_access_compat　order allow denyの書式をそのまま利用できる。）
 
 #####  認証に関するディレクティブ
 
@@ -298,6 +301,8 @@ squidは/etc/squid/squid.confが設定ファイル。
 メモリ上でキャッシュ「される」オブジェクトの最大サイズを指定する。　　
 -  maximum(minimum)_object_size  
 ディスクでキャッシュされるデータの最大（最小）サイズ。  
+-  request_body_max_size  
+httpリクエストボディの最大サイズ  
 -  request_header_max_size  
 httpリクエストヘッダの最大サイズを指定する。  
 -  cache_dir  
