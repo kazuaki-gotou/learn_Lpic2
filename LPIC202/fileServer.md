@@ -52,6 +52,12 @@ activedirectryのドメイン名（realm）を指定。
 winsサーバーのipを指定する。  
 -  wins support  
 sambaサーバーをwinsサーバーとして動作するかどうかを指定する。  
+-  os level = 数値  
+どのサーバがマスターブラウザになるかを決める指標。
+-  local master = yesno  
+sambaにマスターブラウザの選挙に参加させる。
+-  preferred master = yesno  
+マスターブラウザ選挙要求をネットワークにブロードキャストする。  
 
 2.[homes]セクション  
 unixユーザの各ホームディレクトリを一括して共有するためのセクション。  
@@ -88,8 +94,10 @@ sambaサーバへアクセスする際にwindowsドメインのユーザでの�
 （既存あるいは新規作成のlinuxユーザと紐付け→NSS（/etc/nsswitch.conf）を利用してユーザ情報を取得。）  
 デーモン→winbindd  
 
-    -  idmap  
-       windowsのsidとlinuxのuid gidとのマッピングする機能。  
+-  idmap  
+windowsのsidとlinuxのuid,gidとのマッピングする機能。  
+    -  idmap config * : backend  
+    idmap機構で使用する、backend（tdb,ldapなど）の指定。
 
 -  samba4からADのドメインコントローラーの機能追加され、起動コマンドはsystemctl start samba  
 -  ファイルサービスについて、samba3までSMB2に対応し、samba4よりSMB2，3に対応。  
