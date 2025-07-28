@@ -137,6 +137,7 @@ httpdをスタートさせた時に立ち上げるhttpd子プロセス数を指�
 (同時応答リクエスト数を指定。)  
 ・MaxConnectionsPerChild  
 httpd子プロセスが応答できる最大リクエスト数を指定する。  
+
 -  Timeout（秒）  
 クライアントからリクエストを受け取ってからコンテンツ提供終了までの処理上限時間。  
 -  KeepAlive [on|off]  
