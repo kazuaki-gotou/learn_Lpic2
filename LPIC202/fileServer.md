@@ -53,7 +53,7 @@ activedirectryのドメイン名（realm）を指定。
 winsサーバーのipを指定する。  
 -  wins support  
 sambaサーバーをwinsサーバーとして動作するかどうかを指定する。  
--  os level = 数値  
+-  os level = 数値（最大255）  
 どのサーバがマスターブラウザになるかを決める指標。
 -  local master = yesno  
 sambaにマスターブラウザの選挙に参加させる。
@@ -143,6 +143,8 @@ smbd nmbd winbinddなどのデーモンにメッセージを送ることがで�
 NETBIOS名とIPアドレスの紐付けが記載されるファイル。  
 （/etc/samba/lmhosts）  
 NETBIOS名とIPアドレスの名前解決にはWinsサーバが使用されるが、解決できない場合はlmhostsが使用される。  
+-  winsサーバー  
+NETBIOS名とIPアドレスの名前解決を行う。
 
 ##  NFS  
 UNIX標準のファイル共有  
@@ -191,6 +193,10 @@ NFSサーバから応答がなければタイムアウトしてプログラム�
 -  hardマウント  
 NFSサーバから応答があるまで再試行を続ける。
     -  intr  ハードマウントで割り込みを受け付ける。  
+
+-  nolock  
+ファイルロックをかけないようにする。  
+アクセスしたファイルの使用を１人のユーザあるいはプロセスだけの使用にしないようにする。  
 
 ##  kerberos  
 ユーザ認証システム。Activedirectoryで使用する。  
