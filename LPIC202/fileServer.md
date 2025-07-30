@@ -107,6 +107,7 @@ windowsのsidとlinuxのuid,gidとのマッピングする機能。
 
 ###  sambaコマンド  
 sambaユーザの管理を行うことができるコマンド。  
+smbpasswdもpdbeditも追加するsambaユーザと同名のlinuxユーザが必要。
 -  smbpasswd  
     テキスト形式ファイル/etc/samba/smbpasswd  
     -  -a sambaユーザを追加する。-e　有効化　-d  無効化　-x 削除  
