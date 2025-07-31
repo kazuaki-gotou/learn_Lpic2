@@ -89,6 +89,9 @@ apache2.4でのアクセス制御ディレクティブ。
 httpdの設定ファイルや関連コマンドなどを格納するベースのディレクトリ  
 -  DirectoryIndex  
 URLの後ろにファイル名が指定されていない場合に表示するファイル名を指定する。  
+-  ServerSignature  
+エラーメッセージなどのフッター表示するかどうか。  
+ServerTokensで表示する内容を決める。  
 ■外部設定ファイル  
 ・AccessFileName ファイル名  
 外部設定ファイル名を指定。（デフォルトは.htaccess）  
