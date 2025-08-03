@@ -339,3 +339,5 @@ acl (aclグループ名)　src 192.168.0.0/255.255.255.0（src/dstなどのタ�
 -  url_regex  正規表現を用いてURLを指定
 url_regex "/home/blacklist"ファイル名blacklistを指定する場合  
 ファイル内に指定の表現がある場合上記記載。ファイルを指定する場合は""で囲む。　　
+-  urlpath_regex  正規表現を用いてURLを指定。（プロトコル、ホスト名を除いたパス部分のみ）  
+プロトコル(https://)とホスト名（exampletest.local）を除く、/から後ろ（パス）のみ
