@@ -226,12 +226,12 @@ digest認証は認証情報のやりとりをハッシュ化している為、�
     ホストベースのアクセス制御で、Require ipなど新しい構文で使用できる。（apache2.4での動作互換→mod_access_compat　order allow denyの書式をそのまま利用できる。）
 
 #####  認証に関するディレクティブ
-
-・AuthType  
+-  AuthType  
 認証方式を指定する。(basic digest)  
-
-・Require  
+-  Require  
 認証対象とするユーザやグループを指定する。  
+-  AuthUserFile  
+ダイジェスト認証やBASIC認証でしっ要するパスワードファイルを指定する。  
 
 ###  HTTPS
 
