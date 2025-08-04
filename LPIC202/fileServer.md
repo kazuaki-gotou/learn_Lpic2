@@ -107,7 +107,9 @@ windowsのsidとlinuxのuid,gidとのマッピングする機能。
     idmap機構で使用する、backend（tdb,ldapなど）の指定。
 
 -  samba4からADのドメインコントローラーの機能追加され、起動コマンドはsystemctl start samba  
+-  samba4よりDNSによる名前解決機能を導入。
 -  ファイルサービスについて、samba3までSMB2に対応し、samba4よりSMB2，3に対応。  
+
 
 ###  sambaコマンド  
 sambaユーザの管理を行うことができるコマンド。  

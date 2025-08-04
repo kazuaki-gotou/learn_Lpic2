@@ -3,7 +3,8 @@ lpicではISC DHCPを使用。
 ###  dhcpd.conf  
 設定ファイルは/etc/dhcpd.conf  
 -  dhcp.leases  
-どのipアドレスをどのクライアントに貸し出したかを記載するファイル。このファイルが無ければdhcpサーバを起動できない。  
+どのipアドレスをどのクライアントに貸し出したかを記載するファイル。このファイルが無ければdhcpサーバを起動できない。 
+DHCPサーバが自動で新規作成する。CentOSは/var/lib/dhcpd.leasesに配置。 
 
 ####  設定項目  
 -  defalut-lease-time  
