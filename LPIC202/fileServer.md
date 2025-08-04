@@ -18,6 +18,9 @@ globalセクション以降のセクションで設定した項目が現れた�
 認証方法を設定する。  
     -  user  ユーザレベルでの認証
     -  domain  NTドメインのドメインコントローラーを使用して認証
+    -  tdb 
+    trivial databaseでの認証。  
+    sambaが内部で生成するバイナリ形式のデータベース。  
     -  ads  Active Directoryのドメインコントローラーで認証  
 -  passdb backend = 認識方式  
 securityがuserの場合に認証方式を指定する。（複数可）  
@@ -59,6 +62,8 @@ sambaサーバーをwinsサーバーとして動作するかどうかを指定�
 sambaにマスターブラウザの選挙に参加させる。
 -  preferred master = yesno  
 マスターブラウザ選挙要求をネットワークにブロードキャストする。  
+-  unix password sync = yesno  
+linuxシステムとsambaのパスワードを同期する。（linuxとsambaでは異なる）  
 
 2.[homes]セクション  
 unixユーザの各ホームディレクトリを一括して共有するためのセクション。  
