@@ -52,7 +52,7 @@ apache2.4でのアクセス制御ディレクティブ。
      全て許可　order deny allowと同じ。
   -  require all denied  
      全て拒否　order allow denyと同じ。 
-　-  Require All  
+  -  Require All  
 　   全ての条件に合致したら真  
   -  Require Any  
      いずれかの条件に合致したら真  
