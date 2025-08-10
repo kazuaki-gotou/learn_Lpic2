@@ -49,8 +49,10 @@ apache2.2でのアクセス制御ディレクティブ、現在は使用非推�
 -  require  
 apache2.4でのアクセス制御ディレクティブ。  
   -  require all granted  
-     全て許可　order deny allowと同じ。
-  -  require all denied  
+     全て許可　order deny allowと同じ。  
+     ディレクトリへのアクセスを明示的に許可していない場合はアクセス拒否となる。  
+     ファイルに対する実行権（x）も必要になる。  
+-  require all denied  
      全て拒否　order allow denyと同じ。 
   -  Require All  
 　   全ての条件に合致したら真  
@@ -154,6 +156,8 @@ httpd子プロセスが応答できる最大リクエスト数を指定する。
 →KeepAliveを利用して1つの接続を使いまわすことで複数のリクエストに応じる。  
 -  KeepAliveTimeout（秒）  
 KeepAlive有効状態で、クライアントからのコンテンツ終了しても接続状態を切らない上限時間。  
+-  MaxKeepAliveRequests n
+1つの接続で受け付けるリクエスト数。０は無限に許可する。  
 
 ■どうしてhttpdで子プロセスを使用するのか。  
 複数の処理が来てしまった場合1つのプロセスで処理をすると限界が来る。　　
