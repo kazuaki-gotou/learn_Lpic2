@@ -100,9 +100,27 @@ linuxでvpn機能を提供するアプリケーション。
 
 ##  nmap
 ポートスキャンのコマンド  
+-  スキャンタイプ
+    - -sS TCPのSYNスキャン（デフォルト）
+    - -sT TCPconnectスキャン
+    - -sU UDPスキャン
 -  オプション
     - -F ウェルナウンポートを対象にすることでスキャン速度を高速化  
     - -O 相手のホストOSを検出する
+
+```Ubuntuからのnmap
+nmap IPアドレス
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-08-11 09:41 JST
+Nmap scan report for IPアドレス
+Host is up (0.018s latency).
+Not shown: 977 filtered tcp ports (no-response), 18 filtered tcp ports (host-unreach)
+PORT     STATE  SERVICE
+53/tcp   open   domain
+80/tcp   open   http
+139/tcp  open   netbios-ssn
+445/tcp  open   microsoft-ds
+2049/tcp closed nfs
+```
 
 ##  ナレッジ  
 -  CERT  

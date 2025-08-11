@@ -134,6 +134,7 @@ slapdの起動時にslapd -fに続けてファイルを指定して起動も可�
 -  logfile/olcLogFile  デバッグログ出力先を指定  
 -  olcaccess  
 アクセス制御のディレクティブ。  
+olcAccess: to * by * none
 -  olcbackend  
 バックエンドで使用できるtypeを指定。指定できるtype（config ldif passwd bdb ldap）  
 -  olcdatabase  
@@ -150,6 +151,11 @@ slapd.confに平文で記載する代わりにハッシュ値として保存す�
 LDAPサーバのエントリを検索する。  
 LDAPの認証を行ってから検索を行う。
     -  -x SASLを使用せずパスワードを平文
+    -  -h 検索を行うLDAPサーバのホスト名を指定  
+    -  -H 検索を行うLDAPサーバのldapuriを指定
+    -  -L 検索結果をLDIFv1形式で表示
+    -  -LL 検索結果をコメントなしで表示
+    -  -LLL 検索結果をコメントとLDAPver表記無しで表示
 
 -  上記コマンドの共通オプション  
     - -d デバッグレベル（出力ログの詳しさ）を設定。高いほど詳細。
