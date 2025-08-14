@@ -101,7 +101,7 @@ ServerTokensで表示する内容を決める。
 外部設定ファイルにより、httpd.confの上書きを許可するかどうか。directoryセクション配下で使用。  
 -  AuthConfig  
    認証関係の設定を許可。  
--  All すべての設定を許可。　None すべての設定を拒否。　　Limit  Order Allow Denyディレクティブを許可。  
+-  All すべての設定を許可。　None すべての設定（上書き）を拒否。　　Limit  Order Allow Denyディレクティブを許可。  
 
 ■redirect/alias
 -  redirect  

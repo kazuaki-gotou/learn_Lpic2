@@ -134,6 +134,10 @@ dovecotやサーバサイドのメールソフトで使用される。
     メールを送付するリストをファイルで管理して、aliasesファイルにインポートする。  
     書式  
     mailinglist(ここを宛先にするとファイルのユーザに送付可能):　:include:/etc/mail/userlist  
+    -  コマンド引き渡し  
+    admin: |/usr/local/bin/example  
+    届いたメールを/usr/local/bin/exampleコマンドに引き渡し
+
 - exim  
 debian標準のMTA　
 -  procmail  
