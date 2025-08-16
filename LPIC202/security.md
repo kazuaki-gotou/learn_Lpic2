@@ -66,7 +66,12 @@ ftpサーバにログインを禁止するユーザを指定する。
 
 ####  vsftpd  
 セキュリティが高く、パフォーマンスに優れたFTPサーバ。  
-多くのディストリビューションでFTPサーバとして標準採用されている。設定ファイルはvstfp.conf  
+多くのディストリビューションでFTPサーバとして標準採用されている。設定ファイルはvstfp.conf
+####  pure-ftpd  
+よく使われるFTPサーバ  
+-  pure-ftpd.conf  
+設定ファイル  
+
 ###  SSH  
 ####  openssh  
 #####  /etc/ssh/sshd_config  
