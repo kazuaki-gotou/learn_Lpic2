@@ -65,6 +65,9 @@ postfixをコントロールするコマンド。
     - q メールキューの中身を送信　bp メールキューの中身を確認  
 -  mailq  
 postfixとsendmailのメールキューの中身を確認
+-  postqueue  
+postfixのキュー管理コマンド。  
+-f キューの中にあるメールをすぐ送信する。-q メールキューの中身を確認。mailqと同じ
 
 ##  dovecot(ダブコット)  
 IMAP/POP3対応のMDA（届いたメールをユーザの受信箱に入れる）  
