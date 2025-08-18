@@ -8,7 +8,15 @@ sysctlコマンドで設定した値は再起動すると消去される。
 -  /proc/sys/net/ipv4/tcp_syncookies  
 tcpセッションの正当性確認の設定の有効無効を設定。tcpflood攻撃の対策。  
 echo 1 > /proc/sys/net/ipv4/tcp_syncookiesにて有効にする。（無効化する場合は0）  
--  
+-  /proc/sys/net/ipv4/ip_forward  
+異なるNW間でのパケットの転送を有効化する。
+
+```確認
+$ pwd
+/proc/sys/net/ipv4
+$ more ip_forward
+1
+```
 
 ###  iptables  
 NATやACLを設定できる。  
