@@ -173,8 +173,10 @@ DNSサーバが自分のところに来た問い合わせの答えを知らな�
 dnssec-keygen -n ZONE（オプションのデフォルトがZONEのため指定不要）で作成。  
 ゾーンファイルへの署名→dnssec-signzoneコマンド
 
+-  DANE  
+dnssecを応用して、DNSを認証に利用する仕組み。  
 -  TSIG（Transaction Signature）  
-マスターDNSとスレーブDNSni共通の秘密鍵を設定し、
+マスターDNSとスレーブDNSに共通の秘密鍵を設定し、
 ゾーン転送により同期されるゾーンデータなどでデータ改ざんや、DNSサーバの偽装やなりすましを防ぐ技術  
 (ゾーン情報の暗号化は行わない。)  
     -  dnssec-keygen -n HOST で共有秘密鍵を作成。  
