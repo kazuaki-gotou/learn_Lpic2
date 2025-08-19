@@ -84,6 +84,8 @@ ftpサーバにログインを禁止するユーザを指定する。
 ####  openssh  
 #####  /etc/ssh/sshd_config  
 sshd（opensshのデーモン）の設定ファイル。  
+-  Protocol  
+受け付けるSSHバージョンを指定できる。デフォルトは2
 -  AllowUsers　ユーザ名  
 接続許可するユーザを指定  
 デフォルトでは全てのユーザのログインが許可されており、  
@@ -91,7 +93,7 @@ sshd（opensshのデーモン）の設定ファイル。
 -  DenyUsers　ユーザ名  
 接続拒否ユーザを指定 denyとallowが両方ある場合はdenyが優先される。  
 -  X11Forwarding yes/no  
-X11（xwindow）の通信を許可拒否  
+X11（xwindow）の通信を許可拒否　デフォルトはNO  
 -  ~/.ssh/known_host  
 ユーザ認証のためにリモートホスト（サーバ）でユーザ（クライアント）の公開鍵を保存。  
 -  ~/.ssh/authorised_keys  
