@@ -113,7 +113,9 @@ sambaサーバへアクセスする際にwindowsドメインのユーザでの�
 -  idmap  
 windowsのsidとlinuxのuid,gidとのマッピングする機能。  
     -  idmap config * : backend  
-    idmap機構で使用する、backend（tdb,ldapなど）の指定。
+    idmap機構で使用する、backend（tdb,ldapなど）の指定。  
+    -  idmap config * : range
+    Linuxユーザに割り当てるUIDGID範囲を設定する。
 
 -  samba4からADのドメインコントローラーの機能追加され、起動コマンドはsystemctl start samba  
 -  samba4よりDNSによる名前解決機能を導入。

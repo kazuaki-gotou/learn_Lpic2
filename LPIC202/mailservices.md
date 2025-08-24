@@ -185,3 +185,8 @@ Connection closed by foreign host.
 
 more /var/spool/mail/rootで確認
 ```
+
+-  RBL(Realtime Blackhole List)  
+迷惑メールの送信元に登録しているリスト。  
+ブラックリストに載っているIPアドレスが送信元のメールについては阻止する。  
+spamhausなど。
