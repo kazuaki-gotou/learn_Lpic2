@@ -134,7 +134,7 @@ slapdの起動時にslapd -fに続けてファイルを指定して起動も可�
 -  logfile/olcLogFile  デバッグログ出力先を指定  
 -  olcaccess  
 アクセス制御のディレクティブ。  
-olcAccess: to * by * read すべてのデータをすべてのユーザが参照可能
+olcAccess: to * by * read すべてのデータをすべてのユーザが参照可能（アクセス制御の設定を何も記載しない場合この設定）
 olcAccess: to * by * none　参照不可能
 -  olcbackend  
 バックエンドで使用できるtypeを指定。指定できるtype（config ldif passwd bdb ldap）  

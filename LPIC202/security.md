@@ -22,6 +22,7 @@ $ more ip_forward
 ###  iptables  
 NATやACLを設定できる。  
 linuxカーネルにnetfilter機能がありそれを利用するコマンド。  
+ipv6はip6tables  
 -  テーブル  
 いくつかのチェインのセットのこと  
     -  filter フィルタリング  
