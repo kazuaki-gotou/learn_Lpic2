@@ -160,3 +160,28 @@ maildirを使用したIMAPサーバ
 サブディレクトリに分類し、ユーザのホームディレクトリに1メールを1ファイルとして保存。
 -  オープンメールリレー  
 MTA同士のメール転送をリレーと呼び、誰からでもメール転送や送信を受け付けるMTAの設定をオープンメールリレーという。スパムメールの温床。  
+
+```telnetを利用したSMTPサーバの動作確認について
+# telnet localhost 25
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+220 localhost.localdomain ESMTP Postfix
+HELO localhost
+250 localhost.localdomain
+MAIL FROM:root@localhost
+250 2.1.0 Ok
+RCPT TO:別ユーザ名@localhost
+250 2.1.5 Ok
+DATA
+354 End data with <CR><LF>.<CR><LF>
+test
+
+.
+250 2.0.0 Ok: queued as CFC8F208261E
+QUIT
+221 2.0.0 Bye
+Connection closed by foreign host.
+
+more /var/spool/mail/rootで確認
+```
