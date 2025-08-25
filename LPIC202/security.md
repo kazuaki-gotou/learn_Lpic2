@@ -88,6 +88,10 @@ ftpサーバにログインを禁止するユーザを指定する。
 sshd（opensshのデーモン）の設定ファイル。  
 -  Protocol  
 受け付けるSSHバージョンを指定できる。デフォルトは2
+-  PasswordAuthentication  
+パスワード認証を許可するかどうか。デフォルトyes  
+-  PubkeyAuthentication  
+公開鍵認証を許可するかどうか。デフォルトyes
 -  AllowUsers　ユーザ名  
 接続許可するユーザを指定  
 デフォルトでは全てのユーザのログインが許可されており、  
@@ -114,6 +118,7 @@ ssh-agentに秘密鍵とパスフレーズを追加する。
 ###  openvpn  
 linuxでvpn機能を提供するアプリケーション。  
 /etc/openvpn/server.confに設定ファイルがある。  
+仮想nwデバイスがTUN TAP
 
 ##  nmap
 ポートスキャンのコマンド  
