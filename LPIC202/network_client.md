@@ -85,7 +85,6 @@ rootユーザでのログインを/etc/securettyファイルに記載の端末�
 -  pam_nologin.so  
 /etc/nologinがある場合、root以外のログインをできないようにする。　　
 nologinファイルそのものは管理者が手動作成でき、存在する場合はroot以外ログインができないようになる。  
-
 -  pam_deny.so  
 認証をすべて拒否する。  
 -  pam_warn.so  
@@ -94,6 +93,8 @@ nologinファイルそのものは管理者が手動作成でき、存在する�
 ユーザが使用するリソースを制限する。  
 -  pam_env.so  
 環境変数の設定。  
+-  pam_sss.so  
+sssdの認証を行う。  
 
 ##  LDAP  
 データをオブジェクトとして管理し、DITと呼ばれる形式。  
