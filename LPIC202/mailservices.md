@@ -32,6 +32,8 @@ postfixのMTA各種設定
     TLSが有効化されていない場合はこの設定も無効になる。（設定依存）  
     -  smtpd_tls_security_level  
     postfix2.3以降で使用。tlsの使用について指定できる。may有効　encrypt強制  
+    -  smtpd_tls_key_file  
+    サーバ秘密鍵を指定する。
     -  mail_spool_directory  メールスプール先を指定  
         -  mbox  ユーザごとに1ファイルに保存
         -  Mairdir  1メール1ファイルに保存  
