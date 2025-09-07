@@ -103,6 +103,9 @@ sshd（opensshのデーモン）の設定ファイル。
 受け付けるSSHバージョンを指定できる。デフォルトは2
 -  PasswordAuthentication  
 パスワード認証を許可するかどうか。デフォルトyes  
+-  PermitEmptyPasswords yesno  
+空のパスワードを許可するかどうか。  
+許可した場合はパスワードなしでログイン可能。  
 -  PubkeyAuthentication  
 公開鍵認証を許可するかどうか。デフォルトyes
 -  AllowUsers　ユーザ名  
