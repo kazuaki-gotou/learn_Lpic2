@@ -49,7 +49,8 @@ ipv6はip6tables
 -  iptables-restore < ファイル名  
 保存しているiptables設定ファイルをリストアする。要標準入力。  
 -  iptables-save  
-ルールのバックアップや一覧表示に使用する。  
+ルールのバックアップや一覧表示に使用する。 
+標準出力になるので、リダイレクトでファイルに出力すること。  
 ipv6ではip6tables-saveコマンド  
 -  iptables -t nat -A POSTROUTING ルール　
 IPマスカレード　NAPTの設定コマンド  
