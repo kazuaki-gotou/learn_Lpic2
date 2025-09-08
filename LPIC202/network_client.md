@@ -15,9 +15,13 @@ DHCPサーバが自動で新規作成する。CentOSは/var/lib/dhcpd.leasesに�
 -  fixed-address IPアドレス;  
 クライアントに割り当てる固定ipアドレスを設定  
 macアドレスを指定して割り当て、予約席みたいなもの  
+- （deny/allow）unknown-clients  
+macアドレスの指定の無いクライアントにアドレス割り当てするかどうかを決定する。  
 -  option  
-    -  option nis-servers IPアドレス;  
+    -  nis-servers IPアドレス;  
     nisサーバのipアドレスを指定。  
+    -  netbios-name-servers IPアドレス;
+    winsサーバーのIPアドレスを指定する。  
 
 ####  ログ  
 cat /var/log/messages | grep dhcp  
