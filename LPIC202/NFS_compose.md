@@ -22,3 +22,23 @@ mountd          100005  mount showmount
 
 
 ```
+
+
+```firewall
+# firewall-cmd --add-port=111/tcp --permanent
+success
+# firewall-cmd --list-all
+public (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: eth0
+  sources:
+  services: dhcpv6-client dns http nfs samba ssh-65022
+  ports:
+  protocols:
+  masquerade: no
+  forward-ports:
+  source-ports:
+  icmp-blocks:
+  rich rules:
+```

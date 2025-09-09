@@ -54,8 +54,8 @@ activedirectryのドメイン名（realm）を指定。
 ログインした際に実行するスクリプトファイルを指定する。
 -  wins server （ipアドレス） 
 winsサーバーのipを指定する。  
--  wins support  
-sambaサーバーをwinsサーバーとして動作するかどうかを指定する。  
+-  wins support  yesno
+sambaサーバーをwinsサーバーとしても動作させるかどうかを指定する。  
 -  os level = 数値（最大255）  
 どのサーバがマスターブラウザになるかを決める指標。
 -  local master = yesno  
@@ -190,6 +190,8 @@ NFSの設定ファイル。
 NFSやRPCの統計情報について出力する。  
 -  rpcinfo  
 RPCの情報について出力。  
+-  showmount  
+NFSサーバを利用しているクライアントを調べる。  
 
 ■その他  
 -  /etc/fstab  
