@@ -42,8 +42,10 @@ ADサーバのドメインコントローラーになる。
     -  Never  ゲスト認証しない  
     -  Bad Password  パスワードミスでもゲスト認証する。  
     -  Bad User  存在しないユーザの場合はゲスト認証する。  
+-  workgroup  
+ADのNetBios名を指定。ADドメインに参加させるために必要
 -  realm  
-activedirectryのドメイン名（realm）を指定。 
+activedirectryのドメイン名（realm）を指定。 ADドメインに参加させるために必要
 -  log file ファイル名  
 ログ出力するファイルを指定。変数%m指定で接続ホストごとのログファイルを生成する。  
 -  log level  
