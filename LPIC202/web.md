@@ -230,7 +230,9 @@ digest認証は認証情報のやりとりをハッシュ化している為、�
      認証や認可の枠組みそのもので、基盤であり土台。  
      その他のモジュールとの連携の中心。  
 -  mod_authz_host  
-    ホストベースのアクセス制御で、Require ipなど新しい構文で使用できる。（apache2.4での動作互換→mod_access_compat　order allow denyの書式をそのまま利用できる。）
+    ホストベースのアクセス制御で、Require ipなど新しい構文で使用できる。（apache2.4での動作互換→mod_access_compat　order allow denyの書式をそのまま利用できる。）　　
+-  mod_authz_groupfile  
+     指定したグループを許可する。  
 
 #####  認証に関するディレクティブ
 -  AuthType  
