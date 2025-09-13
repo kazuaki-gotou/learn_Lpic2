@@ -16,6 +16,11 @@ Status for the jail: sshd
    |- Total banned:     1
    `- Banned IP list:   192.168.3.40（クライアントIP）
 
+# iptables -L -n
+Chain IN_public_deny (1 references)
+target     prot opt source               destination
+REJECT     tcp  --  192.168.3.40         0.0.0.0/0            tcp dpt:22 ctstate NEW,UNTRACKED reject-with icmp-port-unreachable
+
 # more /var/log/fail2ban.log
 2025-09-13 10:05:14,251 fail2ban.jail           [3351]: INFO    Jail 'sshd' star
 ted
@@ -48,6 +53,8 @@ eck jail has possibly a timezone issue. Line with odd timestamp: ('', '2025-09-1
 .40 already banned
 2025-09-13 10:05:41,492 fail2ban.filter         [3351]: INFO    [sshd] Found 192
 .168.3.40 - 2025-09-13 10:05:41
-
+10分後解除
+2025-09-13 10:15:41,606 fail2ban.actions        [3351]: NOTICE  [sshd] Unban 192
+.168.3.40
 ```
 
