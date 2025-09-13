@@ -152,6 +152,18 @@ smbpasswdもpdbeditも追加するsambaユーザと同名のlinuxユーザが必
 smbd nmbd winbinddなどのデーモンにメッセージを送ることができる。  
 クライアントとの接続をkillするなど。  
 
+```
+# systemctl start smb nmb
+# smbcontrol all ping
+PONG from pid 3257
+PONG from pid 3261
+PONG from pid 3256
+PONG from pid 3262
+PONG from pid 3263
+# systemctl stop smb nmb
+
+```
+
 -  nmblookup  
     NETBIOS名からIPアドレスを参照したり、その逆の参照もできる。マスターブラウザを検索もできる。  
     - Aオプション  

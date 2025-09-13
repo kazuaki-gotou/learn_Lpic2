@@ -26,7 +26,9 @@ postfixのMTA各種設定
     -  mydomain  メールサーバーのドメインを設定する。 
     -  relay_domains  許可されたクライアント以外からのメールで中継を許可するドメインを設定。  
     -  relayhost  配送の中継サーバを指定する。　　
-    FWなどでインターネットへ抜けられない場合などでメールサーバを指定することでメール配送を可能とする。　　
+    FWなどでインターネットへ抜けられない場合などでメールサーバを指定することでメール配送を可能とする。　
+    -  transport_maps  
+    メールリレーの設定情報を指定。  　
     -  smtpd_use_tls  yesでTLSを有効化する。(2.3より前)  
     -  smtpd_enforce_tls  yesでTLSを強制する。(2.3より前)  
     TLSが有効化されていない場合はこの設定も無効になる。（設定依存）  
@@ -47,6 +49,7 @@ postfixのMTA各種設定
     SMTPコマンドのVRFYの有効無効を指定する。  
 -  /etc/postfix/master.cf  
 postfixのデーモンの設定  
+     - smtps  TLSを有効化する。コメントを外して設定が有効  
 
 ###  コマンド  
 -  postconf  
