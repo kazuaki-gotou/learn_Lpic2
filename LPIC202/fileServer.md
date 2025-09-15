@@ -28,7 +28,7 @@ securityがuserの場合に認証方式を指定する。（複数可）
 securityがuserの場合にsmbpasswdで使用するパスワードファイルを指定。  
 -  
 -  encrypt passwords  yes/no  
-暗号化されたパスワードを使用するかを指定する。
+暗号化されたパスワードを使用するかを指定する
 -  server role (サーバの役割)  
 sambaの動作モードを設定する。  
     -  member server  
@@ -240,6 +240,14 @@ NFSサーバから応答があるまで再試行を続ける。
 -  nolock  
 ファイルロックをかけないようにする。  
 アクセスしたファイルの使用を１人のユーザあるいはプロセスだけの使用にしないようにする。  
+
+###  NFSアクセス制御  
+書式
+-  tcp wrapperを使用（/etc/hosts.allow）
+portmap:192.168.1.  
+NFSv3まではrpcbindを使用している。  
+
+
 
 ##  kerberos  
 ユーザ認証システム。Activedirectoryで使用する。  
