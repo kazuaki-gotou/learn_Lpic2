@@ -26,7 +26,8 @@ globalセクション以降のセクションで設定した項目が現れた�
 securityがuserの場合に認証方式を指定する。（複数可）  
 -  smb passwd file = ファイル名  
 securityがuserの場合にsmbpasswdで使用するパスワードファイルを指定。  
--  
+-  guest account  
+ゲストユーザのユーザ名を指定。  
 -  encrypt passwords  yes/no  
 暗号化されたパスワードを使用するかを指定する
 -  server role (サーバの役割)  

@@ -321,6 +321,8 @@ squidは/etc/squid/squid.confが設定ファイル。
 メモリ上でキャッシュ「される」オブジェクトの最大サイズを指定する。　　
 -  maximum(minimum)_object_size  
 ディスクでキャッシュされるデータの最大（最小）サイズ。  
+-  ipcache_size  
+名前解決をキャッシュする数を指定する。  
 -  request_body_max_size  
 httpリクエストボディの最大サイズ  
 -  request_header_max_size  
