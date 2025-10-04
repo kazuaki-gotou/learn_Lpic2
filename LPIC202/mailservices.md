@@ -77,7 +77,7 @@ postfixをコントロールするコマンド。
 postfixとsendmailのメールキューの中身を確認
 -  postqueue  
 postfixのキュー管理コマンド。  
--f キューの中にあるメールをすぐ送信する。-q メールキューの中身を確認。mailqと同じ
+-f キューの中にあるメールをすぐ送信する。-q メールキューの中身を確認。mailqに比べてこちらはpostfixのみ確認。
 -  postsuper -d  
 postfixのメールキューを削除。  
 

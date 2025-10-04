@@ -144,7 +144,7 @@ ssh-agentに秘密鍵とパスフレーズを追加する。
 CentOS7でのインストール方法について→https://www.sharemyknowledge.jp/centos7/openvpn-centos7  
 linuxでvpn機能を提供するアプリケーション。  
 /etc/openvpn/server.confに設定ファイルがある。  
-仮想nwデバイスがTUN TAP  
+仮想nwデバイスがTUN (ルーティング方式) TAP (ブリッジ方式)  
 デフォルトport番号は1194  
 
 -  server.conf
