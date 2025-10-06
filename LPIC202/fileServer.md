@@ -142,6 +142,8 @@ smbpasswdもpdbeditも追加するsambaユーザと同名のlinuxユーザが必
     設定ファイルの構文チェックを行う。  
     -  user  
     ユーザ管理を行う  
+    -  dns  
+    dns管理を行う  
 -  smbclient  
     windowsネットワーク上の共有リソースにアクセスできる。  
     -  -L ホスト名/--list ホスト名  指定ホストで共有可能なリソースを一覧表示
