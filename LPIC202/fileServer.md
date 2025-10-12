@@ -104,6 +104,7 @@ unixユーザの各ホームディレクトリを一括して共有するため�
 ゲストユーザ→パスワードなしでのログインをするユーザ  
 -  [create|Directory] mask = ファイルorディレクトリに適用可能なパーミッションを設定。  
 -  force [create|Directory] mask =  必ずファイルorディレクトリに適用可能なパーミッションを設定。
+-  hide dot files = yesno dotから始まるファイルを隠すかどうかを設定する。
 
 
 ###  デーモン
@@ -158,6 +159,10 @@ smbpasswdもpdbeditも追加するsambaユーザと同名のlinuxユーザが必
 -  smbcontrol  
 smbd nmbd winbinddなどのデーモンにメッセージを送ることができる。  
 クライアントとの接続をkillするなど。  
+    -  close-share 指定した共有をクローズする。 smbdのみ
+    -  reload-config 指定したデーモンを再読み込みする。  
+    -  kill-client-ip 指定したIPアドレスを切断。 smbdのみ
+    -  ping 指定した対象にpingし応答があった対象のPIDを表示
 
 ```
 # systemctl start smb nmb
