@@ -103,7 +103,7 @@ unixユーザの各ホームディレクトリを一括して共有するため�
 -  guest ok | はpublic = yesno  
 ゲストユーザ→パスワードなしでのログインをするユーザ  
 -  [create|Directory] mask = ファイルorディレクトリに適用可能なパーミッションを設定。  
--  force [create|Directory] mask =  必ずファイルorディレクトリに適用可能なパーミッションを設定。
+-  force [create|Directory] mode =  必ずファイルorディレクトリに適用可能なパーミッションを設定。
 -  hide dot files = yesno dotから始まるファイルを隠すかどうかを設定する。
 
 
