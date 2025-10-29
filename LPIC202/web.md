@@ -103,6 +103,7 @@ ServerTokensで表示する内容を決める。
 ■外部設定ファイル  
 ・AccessFileName ファイル名  
 外部設定ファイル名を指定。（デフォルトは.htaccess）  
+.htaccess→Webサイトを操作するための外部設定ファイル。  
 ・AllowOverride パラメータ  
 外部設定ファイルにより、httpd.confの上書きを許可するかどうか。directoryセクション配下で使用。  
 -  AuthConfig  
