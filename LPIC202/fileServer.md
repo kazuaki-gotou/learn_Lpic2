@@ -15,14 +15,14 @@ sambaサーバの設定ファイル。
 samba全般の設定を行う。  
 globalセクション以降のセクションで設定した項目が現れた場合は上書きする。（globalでの設定はその他セクションのデフォルト値になる）  
 -  security  
-認証方法を設定する。  
+認証方法を設定する。(どのように認証情報を保存するのか)  
     -  user  ユーザレベルでの認証
     -  domain  NTドメインのドメインコントローラーを使用して認証
     -  tdb 
     trivial databaseでの認証。  
     sambaが内部で生成するバイナリ形式のデータベース。  
     -  ads  Active Directoryのドメインコントローラーで認証  
--  passdb backend = 認識方式  
+-  passdb backend = 認識方式  （誰が認証を行うのか）
 securityがuserの場合に認証方式を指定する。（複数可）  
 -  smb passwd file = ファイル名  
 securityがuserの場合にsmbpasswdで使用するパスワードファイルを指定。  
